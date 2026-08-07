@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ChevronUp } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -10,6 +10,7 @@ export function FeatureSplit({
   body,
   points,
   cta = "Explore more",
+  ctaHref = "#cta",
   visual,
   reverse = false,
   tone = "light",
@@ -20,6 +21,7 @@ export function FeatureSplit({
   body: string;
   points: string[];
   cta?: string;
+  ctaHref?: string;
   visual: ReactNode;
   reverse?: boolean;
   tone?: "light" | "tint";
@@ -41,13 +43,13 @@ export function FeatureSplit({
           <ul className="mt-10 space-y-5">
             {points.map((p) => (
               <li key={p} className="flex items-start gap-4">
-                <ChevronUp className="mt-0.5 size-5 shrink-0 text-twilight" strokeWidth={3} />
+                <ChevronRight className="mt-0.5 size-5 shrink-0 text-twilight" strokeWidth={3} />
                 <span className="max-w-lg text-twilight/85">{p}</span>
               </li>
             ))}
           </ul>
           <Button variant="hero" size="lg" className="mt-10" asChild>
-            <a href="#cta">{cta}</a>
+            <a href={ctaHref}>{cta}</a>
           </Button>
         </div>
         <div className={cn("relative", reverse && "lg:order-1")}>{visual}</div>

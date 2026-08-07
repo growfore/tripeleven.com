@@ -10,7 +10,7 @@
  */
 
 @theme inline {
-  --font-display: var(--font-display);
+  --font-display: var(--font-sans);
   --font-sans: var(--font-sans);
   --color-twilight: var(--twilight);
   --color-teal-blue: var(--teal-blue);
@@ -47,31 +47,31 @@
 }
 
 :root {
-  --radius: 0.75rem;
-  --twilight: oklch(0.23 0.176 269);
-  --teal-blue: oklch(0.535 0.132 240);
-  --surf: oklch(0.71 0.129 219);
-  --frost: oklch(0.874 0.066 208);
-  --cyan-lite: oklch(0.945 0.027 205);
+  --radius: 0.625rem;
+  --twilight: oklch(0.148 0.004 228.8);
+  --teal-blue: #0284c7;
+  --surf: #38bdf8;
+  --frost: #7dd3fc;
+  --cyan-lite: #e0f2fe;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.23 0.176 269);
+  --foreground: oklch(0.148 0.004 228.8);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.23 0.176 269);
+  --card-foreground: oklch(0.148 0.004 228.8);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.23 0.176 269);
-  --primary: oklch(0.23 0.176 269);
-  --primary-foreground: oklch(0.985 0.01 205);
-  --secondary: oklch(0.945 0.027 205);
-  --secondary-foreground: oklch(0.23 0.176 269);
-  --muted: oklch(0.97 0.012 240);
-  --muted-foreground: oklch(0.5 0.045 255);
-  --accent: oklch(0.71 0.129 219);
-  --accent-foreground: oklch(0.23 0.176 269);
+  --popover-foreground: oklch(0.148 0.004 228.8);
+  --primary: #0284c7;
+  --primary-foreground: oklch(0.977 0.014 308.299);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.963 0.002 197.1);
+  --muted-foreground: oklch(0.56 0.021 213.5);
+  --accent: oklch(0.963 0.002 197.1);
+  --accent-foreground: oklch(0.218 0.008 223.9);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.9 0.02 230);
-  --input: oklch(0.9 0.02 230);
-  --ring: oklch(0.535 0.132 240);
+  --border: oklch(0.925 0.005 214.3);
+  --input: oklch(0.925 0.005 214.3);
+  --ring: oklch(0.723 0.014 214.4);
 }
 
 @layer base {
@@ -97,12 +97,12 @@
 
 @utility tilt-a {
   transform: rotate(-4deg);
-  box-shadow: 0 24px 60px -20px oklch(0.23 0.176 269 / 0.45);
+  box-shadow: 0 24px 60px -20px oklch(0.148 0.004 228.8 / 0.45);
 }
 
 @utility tilt-b {
   transform: rotate(5deg);
-  box-shadow: 0 24px 60px -20px oklch(0.23 0.176 269 / 0.45);
+  box-shadow: 0 24px 60px -20px oklch(0.148 0.004 228.8 / 0.45);
 }
 
 @utility band-cyan {

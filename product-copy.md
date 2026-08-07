@@ -1,8 +1,8 @@
-# TravelAgency SaaS — marketing copy (first person)
+# TripEleven — TravelAgency SaaS marketing copy (first person)
 
 ## Positioning
 
-We're a **white-label, multi-tenant platform for tour & travel agencies** to build, manage, and sell trips online — plus a fully customizable public website template. Every agency gets its own isolated workspace (its own catalog, content, bookings, payments, and branding), behind one shared admin dashboard. We're built for tour operators, trekking companies, DMCs, and boutique travel agencies.
+We're an **all-in-one, multi-tenant platform for tour & travel agencies** to build, manage, and sell trips online — plus a fully customizable public website template. Every agency gets its own isolated workspace (its own catalog, content, bookings, payments, and branding), behind one shared admin dashboard. We're built for tour operators, trekking companies, DMCs, and boutique travel agencies.
 
 **Our pitch in one line:** *Launch a complete travel agency website — catalog, bookings, payments, SEO, content, and AI trip generation — without writing a line of code.*
 
@@ -60,9 +60,9 @@ We're a **white-label, multi-tenant platform for tour & travel agencies** to bui
 ## Bookings & payments — commerce built in
 
 - **Customer booking flow** — travelers register, browse departures, and book trips by departure date + group size.
-- **Stripe checkout** — secure payment-intent checkout, **webhook verification**, and payment confirmation; deposits or full payment.
+- **Secure online checkout** — payment-intent checkout with **verification**, and payment confirmation; deposits or full payment.
 - **Bookings dashboard** — full lifecycle: Pending payment → Confirmed → Completed / Cancelled / Failed; customer name/email/phone on every booking.
-- **Payments dashboard** — amount, type, currency, status, provider, transaction ID, and the linked Stripe payment intent. Multi-currency (USD / NPR).
+- **Payments dashboard** — amount, type, currency, status, provider, transaction ID, and the linked payment intent. Multi-currency (USD / NPR).
 - **Customer accounts** — traveler registration/login, public profiles (username, bio, image), **reviews with ratings** attached to trips, and **wishlists**.
 
 ## SEO & growth toolkit — built-in, not bolt-on
@@ -85,7 +85,7 @@ We're a **white-label, multi-tenant platform for tour & travel agencies** to bui
 
 ## The customizable public website — launch-ready
 
-- Our backend exposes a **complete public API** that powers a customer-facing site: published trips with filtering (category/city/region, price range, search), trip detail pages, featured tags, menus, site config, blog, newsletter subscribe/unsubscribe, user accounts, reviews, wishlists, and Stripe checkout.
+- Our backend exposes a **complete public API** that powers a customer-facing site: published trips with filtering (category/city/region, price range, search), trip detail pages, featured tags, menus, site config, blog, newsletter subscribe/unsubscribe, user accounts, reviews, wishlists, and secure online checkout.
 - **The frontend template is our next deliverable** — a ready-to-brand theme with **full customization** (layout, colors, sections) that agencies launch with. Combined with our dashboard's branding tools, it's *"your logo, your site, your bookings — out of the box."*
 - Everything is content-driven: your public site is shaped by what you curate in the dashboard (featured trips, nav, footer, testimonials, team, reviews).
 
@@ -94,5 +94,5 @@ We're a **white-label, multi-tenant platform for tour & travel agencies** to bui
 1. **"From topic to bookable trip in minutes"** — AI generation + 11-step builder.
 2. **"A complete agency website without developers"** — template + no-code dashboard.
 3. **"SEO-first, everywhere"** — schema markup, OG, redirects, alt-text automation.
-4. **"Your travelers, your bookings, your payments"** — Stripe checkout, bookings, wishlists, reviews.
+4. **"Your travelers, your bookings, your payments"** — secure online checkout, bookings, wishlists, reviews.
 5. **"Built for real operators"** — altitude charts, itinerary variants, departures/slots, PDF itineraries, multi-currency.

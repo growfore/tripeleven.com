@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Mountain } from "lucide-react";
+import { SIGNUP_URL } from "@/lib/site";
 
 export function Cta() {
   return (
@@ -9,18 +11,18 @@ export function Cta() {
           Your logo, your site, your sales — out of the box.
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg text-primary-foreground/75">
-          Start a 14-day trial, import your trips, and see your agency live before the week is out.
+          Start free, build your catalog, and see your agency live before the week is out.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-3 sm:flex-row">
           <Button variant="onDark" size="xl" asChild>
-            <a href="#cta">Start free trial</a>
+            <a href={SIGNUP_URL}>Start free</a>
           </Button>
           <Button
             size="xl"
             className="rounded-lg border-2 border-primary-foreground/40 bg-transparent font-semibold text-primary-foreground hover:bg-primary-foreground/10"
             asChild
           >
-            <a href="#cta">Schedule a demo</a>
+            <Link href="/contact">Talk to sales</Link>
           </Button>
         </div>
         <p className="mt-4 text-sm text-primary-foreground/60">
@@ -34,11 +36,38 @@ export function Cta() {
 const cols = [
   {
     title: "Platform",
-    links: ["Trip builder", "AI generation", "Inquiries & payments", "Media library", "SEO toolkit"],
+    links: [
+      { label: "Features", href: "/features" },
+      { label: "Trip builder", href: "/trip-builder" },
+      { label: "AI generation", href: "/ai" },
+      { label: "Bookings & payments", href: "/bookings" },
+      { label: "SEO toolkit", href: "/seo" },
+      { label: "Pricing", href: "/pricing" },
+    ],
   },
-  { title: "Built for", links: ["Tour operators", "Trekking companies", "DMCs", "Adventure travel"] },
-  { title: "Company", links: ["About", "Blog", "Careers", "Contact"] },
-  { title: "Legal", links: ["Privacy", "Terms", "Security", "Status"] },
+  {
+    title: "Built for",
+    links: [
+      { label: "Tour operators", href: "/use-cases" },
+      { label: "Trekking companies", href: "/use-cases" },
+      { label: "DMCs", href: "/use-cases" },
+      { label: "Adventure travel", href: "/use-cases" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
+    ],
+  },
 ];
 
 export function Footer() {
@@ -48,10 +77,10 @@ export function Footer() {
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 text-2xl font-bold text-twilight">
             <Mountain className="size-7 text-teal-blue" />
-            <span className="font-display">Voyari</span>
+            <span className="font-display">TripEleven</span>
           </div>
           <p className="mt-4 text-sm text-twilight/70">
-            The white-label platform for travel agencies that sell their own trips.
+            The platform for travel agencies that sell their own trips.
           </p>
         </div>
         {cols.map((c) => (
@@ -59,10 +88,10 @@ export function Footer() {
             <p className="font-bold text-twilight">{c.title}</p>
             <ul className="mt-4 space-y-2.5">
               {c.links.map((l) => (
-                <li key={l}>
-                  <a href="#cta" className="text-sm text-twilight/70 hover:text-twilight">
-                    {l}
-                  </a>
+                <li key={l.label}>
+                  <Link href={l.href} className="text-sm text-twilight/70 hover:text-twilight">
+                    {l.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -70,7 +99,7 @@ export function Footer() {
         ))}
       </div>
       <div className="mx-auto mt-14 max-w-7xl border-t border-twilight/15 pt-6 text-sm text-twilight/60">
-        © {new Date().getFullYear()} Voyari. All rights reserved.
+        © {new Date().getFullYear()} TripEleven. All rights reserved.
       </div>
     </footer>
   );

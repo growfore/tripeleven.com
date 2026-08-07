@@ -1,6 +1,7 @@
 import { Check } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { SIGNUP_URL } from "@/lib/site";
 
 const proofs = [
   {
@@ -9,7 +10,7 @@ const proofs = [
   },
   {
     bold: "Sell trips directly:",
-    rest: "Stripe checkout, departures, deposits and multi-currency built in.",
+    rest: "secure online checkout, departures, deposits and multi-currency built in.",
   },
   {
     bold: "SEO-first by default:",
@@ -28,16 +29,16 @@ export function Hero() {
             Less admin.
           </h1>
           <p className="mt-7 max-w-lg text-lg text-twilight/75">
-            Voyari is the white-label platform for tour operators, trekking companies and DMCs —
-            build your catalog, publish a full website, and capture trip inquiries without writing a
-            line of code.
+            TripEleven is the platform for tour operators, trekking companies and DMCs —
+            build your catalog, publish a full website, and take bookings without writing a line of
+            code.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button variant="hero" size="xl" asChild>
-              <a href="#cta">Claim your 14-day free trial</a>
+              <a href={SIGNUP_URL}>Start for free</a>
             </Button>
             <Button variant="outlineDark" size="xl" asChild>
-              <a href="#builder">See the trip builder</a>
+              <a href="/trip-builder">See the trip builder</a>
             </Button>
           </div>
           <p className="mt-4 text-sm italic text-twilight/70">No credit card required</p>

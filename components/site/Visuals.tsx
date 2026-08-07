@@ -75,7 +75,7 @@ export function BuilderVisual() {
 
 export function ChannelVisual() {
   const chips = [
-    "Stripe",
+    "Secure checkout",
     "Google Things to do",
     "Tripadvisor",
     "Viator",

@@ -1,6 +1,4 @@
-import type { Metadata } from "next";
 import Image from "next/image";
-import { Nav } from "@/components/site/Nav";
 import { Hero } from "@/components/site/Hero";
 import { Benefits } from "@/components/site/Benefits";
 import { FeatureSplit } from "@/components/site/FeatureSplit";
@@ -8,29 +6,11 @@ import { BuilderVisual, ChannelVisual } from "@/components/site/Visuals";
 import { AiSection } from "@/components/site/AiSection";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Pricing } from "@/components/site/Pricing";
-import { Cta, Footer } from "@/components/site/Cta";
-
-const title = "Voyari — White-label trip platform for travel agencies";
-const description =
-  "Launch a complete travel agency website: trip catalog, AI itineraries, inquiries, Stripe payments and SEO — no code required.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: {
-    title,
-    description,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-};
+import { Cta } from "@/components/site/Cta";
 
 export default function Home() {
   return (
     <main>
-      <Nav />
       <Hero />
       <Benefits />
 
@@ -45,6 +25,7 @@ export default function Home() {
           "Departures and slots with capacity, available spots and per-date pricing",
         ]}
         cta="See the builder"
+        ctaHref="/trip-builder"
         visual={<BuilderVisual />}
       />
 
@@ -54,15 +35,16 @@ export default function Home() {
         id="inquiries"
         tone="tint"
         reverse
-        eyebrow="Inquiries & payments"
-        title="Your travelers, your inquiries, your payments."
-        body="Travelers register, request a departure and pay through secure Stripe checkout. You watch every inquiry move from pending to confirmed in one dashboard."
+        eyebrow="Bookings & payments"
+        title="Your travelers, your bookings, your payments."
+        body="Travelers register, request a departure and pay through our secure online checkout. You watch every booking move from pending to confirmed in one dashboard."
         points={[
-          "Stripe payment intents with webhook verification, deposits or full payment",
+          "Secure payment checkout with verification, deposits or full payment",
           "Full lifecycle: pending → confirmed → completed, cancelled or failed",
           "Customer accounts with reviews, ratings and wishlists, in USD or NPR",
         ]}
-        cta="Explore inquiries"
+        cta="Explore bookings"
+        ctaHref="/bookings"
         visual={
           <Image
             src="/images/dashboard-desk.jpg"
@@ -86,6 +68,7 @@ export default function Home() {
           "Alt text and captions baked into the file for accessibility and SEO",
         ]}
         cta="Explore the editor"
+        ctaHref="/features"
         visual={
           <div className="flex justify-center gap-4">
             <Image
@@ -120,14 +103,14 @@ export default function Home() {
           "Per-trip SEO: meta, canonical, Open Graph 1200×630 and JSON-LD schema",
           "Auto slugs with permanent 301 redirects and a redirect manager with cycle detection",
         ]}
-        cta="See the template"
+        cta="See the SEO toolkit"
+        ctaHref="/seo"
         visual={<ChannelVisual />}
       />
 
       <Testimonials />
       <Pricing />
       <Cta />
-      <Footer />
     </main>
   );
 }

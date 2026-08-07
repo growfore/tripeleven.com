@@ -36,7 +36,7 @@ export function AiSection() {
           ))}
         </div>
         <Button variant="onDark" size="xl" className="mt-14" asChild>
-          <a href="#cta">Try AI trip generation</a>
+          <a href="/ai">Try AI trip generation</a>
         </Button>
       </div>
     </section>
