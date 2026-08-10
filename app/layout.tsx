@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Sora } from "next/font/google";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Cta";
+import { ClarityAnalytics } from "@/components/site/Clarity";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -73,6 +74,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className={`${sora.variable}`}>
+        <ClarityAnalytics />
         <Nav />
         {children}
         <Footer />
