@@ -8,7 +8,7 @@ pnpm build            # next build
 pnpm lint             # eslint (next/core-web-vitals)
 ```
 
-- No `.env` — static site, no backend calls.
+- Contact form posts to `app/api/contact/route.ts`, which sends via Resend (`RESEND_API_KEY` in env — set locally in `.env.local` and in Vercel; from/to are `noreply@tripeleven.com`). No other backend calls.
 - All design tokens live in `app/globals.css` (twilight, teal-blue, surf, frost, cyan-lite + shadcn tokens). Do not inline colors.
 - Brand constants (name, signup URL, contact email) live in `lib/site.ts`. Use `SIGNUP_URL` for signup CTAs, `/contact` for Enterprise/sales.
 - Per-page `Metadata` uses the `pageMetadata()` helper in `lib/seo.ts` (sets canonical + OG). Add new routes to `app/sitemap.ts`.
