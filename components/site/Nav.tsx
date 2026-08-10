@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { ArrowRight, Mountain, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SIGNUP_URL } from "@/lib/site";
+import { LOGIN_URL, SIGNUP_URL } from "@/lib/site";
 
 const links = [
   { label: "Features", href: "/features" },
@@ -22,7 +22,7 @@ export function Nav() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header>
+    <header className="fixed top-0 w-screen z-99">
       <div className="bg-twilight text-primary-foreground">
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-6 py-3 text-sm">
           <span>See a live agency running on TripEleven</span>
@@ -36,10 +36,9 @@ export function Nav() {
           </a>
         </div>
       </div>
-      <nav className="band-cyan">
+      <nav className="band-cyan shadow-b shadow-sm">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-twilight">
-            <Mountain className="size-7 text-teal-blue" />
             <span className="font-display">TripEleven</span>
           </Link>
           <div className="hidden items-center gap-7 lg:flex">
@@ -59,11 +58,13 @@ export function Nav() {
             ))}
           </div>
           <div className="flex items-center gap-4">
-            <a href={SIGNUP_URL} className="hidden text-[15px] font-medium text-twilight md:block">
-              Login
-            </a>
+            <Button variant="outlineDark" size="lg" className="hidden sm:inline-flex" asChild>
+              <a href={LOGIN_URL} className="" target="_blank">
+                Login
+              </a>
+            </Button>
             <Button variant="hero" size="lg" className="hidden sm:inline-flex" asChild>
-              <a href={SIGNUP_URL}>Start free</a>
+              <a href={SIGNUP_URL} target="_blank">Start free</a>
             </Button>
             <button
               className="lg:hidden"

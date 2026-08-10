@@ -76,7 +76,6 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-5">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 text-2xl font-bold text-twilight">
-            <Mountain className="size-7 text-teal-blue" />
             <span className="font-display">TripEleven</span>
           </div>
           <p className="mt-4 text-sm text-twilight/70">

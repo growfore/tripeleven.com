@@ -1,17 +1,23 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
-import { Sora } from "next/font/google";
+import { Livvic, Sora } from "next/font/google";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Cta";
 import { ClarityAnalytics } from "@/components/site/Clarity";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-const sora = Sora({
+// const sora = Sora({
+//   subsets: ["latin"],
+//   weight: ["400", "500", "600", "700"],
+//   variable: "--font-sans",
+// });
+
+const livvic = Livvic({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-sans",
-});
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -73,10 +79,12 @@ export default function Layout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${sora.variable}`}>
+      <body className={`${livvic.variable}`}>
         <ClarityAnalytics />
         <Nav />
-        {children}
+        <div className="pt-28">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
