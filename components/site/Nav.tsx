@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Mountain, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,8 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
 
   return (
     <header>
@@ -44,7 +47,12 @@ export function Nav() {
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[15px] font-medium text-twilight/80 transition-colors hover:text-twilight"
+                aria-current={isActive(l.href) ? "page" : undefined}
+                className={`text-[15px] font-medium transition-colors ${
+                  isActive(l.href)
+                    ? "font-semibold text-teal-blue"
+                    : "text-twilight/80 hover:text-twilight"
+                }`}
               >
                 {l.label}
               </Link>
@@ -74,7 +82,10 @@ export function Nav() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="text-base font-medium text-twilight"
+                  aria-current={isActive(l.href) ? "page" : undefined}
+                  className={`text-base font-medium ${
+                    isActive(l.href) ? "font-semibold text-teal-blue" : "text-twilight"
+                  }`}
                 >
                   {l.label}
                 </Link>
