@@ -26,7 +26,12 @@ export default function Home() {
         ]}
         cta="See the builder"
         ctaHref="/trip-builder"
-        visual={<BuilderVisual />}
+        visual={
+          <div className="relative ml-24 scale-160 rounded-md">
+            <Image src={"/product-images/trip-editor-2.png"} width={1900} height={800} alt="trip builder" className="block w-full rounded-md" />
+            <div className="pointer-events-none absolute inset-0 rounded-md bg-[radial-gradient(ellipse_at_center,transparent_55%,white_98%)]" />
+          </div>
+        }
       />
 
       <AiSection />

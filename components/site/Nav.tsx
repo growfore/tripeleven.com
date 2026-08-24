@@ -27,7 +27,7 @@ export function Nav() {
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-6 py-3 text-sm">
           <span>See a live agency running on TripEleven</span>
           <a
-            href="https://essencetreksnepal.com"
+            href="https://walkthroughnepal.com"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1 font-semibold underline"

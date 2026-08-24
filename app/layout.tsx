@@ -1,17 +1,17 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
-import { Livvic, Sora } from "next/font/google";
+import { Livvic} from "next/font/google";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Cta";
 import { ClarityAnalytics } from "@/components/site/Clarity";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  developer,
+  developerPerson,
+  growforeOrganization,
+} from "@/lib/developer-attribution";
 import "./globals.css";
 
-// const sora = Sora({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "600", "700"],
-//   variable: "--font-sans",
-// });
 
 const livvic = Livvic({
   subsets: ["latin"],
@@ -41,6 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  creator: developer.name,
 };
 
 export const viewport: Viewport = {
@@ -52,6 +53,7 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
       email: "hello@tripeleven.com",
@@ -59,13 +61,28 @@ const jsonLd = {
     },
     {
       "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
       name: SITE_NAME,
       url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      creator: [
+        { "@id": growforeOrganization["@id"] },
+        { "@id": developerPerson["@id"] },
+      ],
       potentialAction: {
         "@type": "SearchAction",
         target: `${SITE_URL}/?q={search_term_string}`,
         "query-input": "required name=search_term_string",
       },
+    },
+    growforeOrganization,
+    developerPerson,
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/#webpage`,
+      url: SITE_URL,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      creator: { "@id": developerPerson["@id"] },
     },
   ],
 };

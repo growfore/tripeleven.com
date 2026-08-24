@@ -29,7 +29,7 @@ export function FeatureSplit({
   return (
     <section
       id={id}
-      className={cn("px-6 py-20 lg:py-28", tone === "tint" ? "bg-cyan-lite/50" : "bg-background")}
+      className={cn("overflow-x-clip px-6 py-20 lg:py-28", tone === "tint" ? "bg-cyan-lite/50" : "bg-background")}
     >
       <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
         <div className={cn(reverse && "lg:order-2")}>
@@ -48,11 +48,11 @@ export function FeatureSplit({
               </li>
             ))}
           </ul>
-          <Button variant="hero" size="lg" className="mt-10" asChild>
+          <Button variant="hero" size="lg" className="my-10" asChild>
             <a href={ctaHref}>{cta}</a>
           </Button>
         </div>
-        <div className={cn("relative", reverse && "lg:order-1")}>{visual}</div>
+        <div className={cn("relative ", reverse && "lg:order-1")}>{visual}</div>
       </div>
     </section>
   );
