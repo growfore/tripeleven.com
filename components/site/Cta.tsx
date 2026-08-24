@@ -72,7 +72,7 @@ const cols = [
 
 export function Footer() {
   return (
-    <footer className="band-cyan px-6 py-16">
+    <footer className="border-t border-border bg-background px-6 py-16">
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-5">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 text-2xl font-bold text-twilight">
@@ -97,7 +97,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="mx-auto mt-14 max-w-7xl border-t border-twilight/15 pt-6 text-sm text-twilight/60">
+      <div className="mx-auto mt-14 max-w-7xl border-t border-border pt-6 text-sm text-twilight/60">
         © {new Date().getFullYear()} TripEleven. All rights reserved.
       </div>
     </footer>

@@ -15,7 +15,7 @@ export function PageHero({
   className?: string;
 }) {
   return (
-    <section className={cn("band-cyan px-6 py-20 lg:py-28", className)}>
+    <section className={cn("border-b border-border bg-background px-6 py-20 lg:py-28", className)}>
       <div className="mx-auto max-w-4xl text-center">
         <p className="text-sm font-bold tracking-widest text-teal-blue uppercase">{eyebrow}</p>
         <h1 className="mt-4 text-4xl text-twilight sm:text-6xl">{title}</h1>

@@ -20,7 +20,7 @@ const proofs = [
 
 export function Hero() {
   return (
-    <section className="band-cyan overflow-hidden">
+    <section className="overflow-hidden border-b border-border">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-10 pb-16 lg:grid-cols-2 lg:pt-16">
         <div>
           <h1 className="text-5xl leading-[1.05] text-twilight sm:text-6xl lg:text-7xl">
@@ -49,7 +49,7 @@ export function Hero() {
             alt="Trekker on a Himalayan ridge at sunrise"
             width={900}
             height={1200}
-            className="tilt-a w-1/2 max-w-[300px] rounded-sm border-8 border-background object-cover"
+            className="w-1/2 max-w-[300px] rounded-lg border border-border object-cover"
           />
           <Image
             src="/images/hero-group.jpg"
@@ -57,22 +57,24 @@ export function Hero() {
             width={900}
             height={1200}
             loading="lazy"
-            className="tilt-b mt-14 w-1/2 max-w-[300px] rounded-sm border-8 border-background object-cover"
+            className="mt-14 w-1/2 max-w-[300px] rounded-lg border border-border object-cover"
           />
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-6 pb-20 md:grid-cols-3">
-        {proofs.map((p) => (
-          <div key={p.bold} className="flex gap-3">
-            <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-twilight">
-              <Check className="size-4 text-primary-foreground" />
-            </span>
-            <p className="text-twilight/85">
-              <strong className="font-bold text-twilight">{p.bold}</strong> {p.rest}
-            </p>
-          </div>
-        ))}
+      <div className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="grid overflow-hidden rounded-xl bg-border md:grid-cols-3">
+          {proofs.map((p) => (
+            <div key={p.bold} className="flex gap-3 bg-card p-6 [&:not(:last-child)]:border-b md:border-b-0 md:[&:not(:last-child)]:border-r border-border">
+              <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-twilight">
+                <Check className="size-4 text-primary-foreground" />
+              </span>
+              <p className="text-twilight/85">
+                <strong className="font-bold text-twilight">{p.bold}</strong> {p.rest}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

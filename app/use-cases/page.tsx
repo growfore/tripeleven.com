@@ -65,7 +65,7 @@ export default function UseCasesPage() {
             ))}
           </div>
 
-          <div className="mt-16 rounded-4xl band-cyan px-8 py-14 text-center sm:px-14">
+          <div className="mt-16 rounded-4xl bg-muted px-8 py-14 text-center sm:px-14">
             <h2 className="mx-auto max-w-2xl text-3xl text-twilight sm:text-4xl">
               Every agency gets its own workspace.
             </h2>

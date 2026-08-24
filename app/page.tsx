@@ -84,7 +84,7 @@ export default function Home() {
               width={900}
               height={1100}
               loading="lazy"
-              className="tilt-a w-1/2 max-w-[290px] rounded-sm border-8 border-background object-cover"
+              className="w-1/2 max-w-[290px] rounded-lg border border-border object-cover"
             />
             <Image
               src="/images/hero-group.jpg"
@@ -92,7 +92,7 @@ export default function Home() {
               width={900}
               height={1200}
               loading="lazy"
-              className="tilt-b mt-12 w-1/2 max-w-[290px] rounded-sm border-8 border-background object-cover"
+              className="mt-12 w-1/2 max-w-[290px] rounded-lg border border-border object-cover"
             />
           </div>
         }

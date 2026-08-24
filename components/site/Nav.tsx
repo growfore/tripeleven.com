@@ -36,7 +36,7 @@ export function Nav() {
           </a>
         </div>
       </div>
-      <nav className="band-cyan shadow-b shadow-sm">
+      <nav className="border-b border-border bg-white/80 shadow-sm backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-twilight">
             <span className="font-display">TripEleven</span>

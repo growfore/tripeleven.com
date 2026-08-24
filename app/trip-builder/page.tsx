@@ -102,7 +102,7 @@ export default function TripBuilderPage() {
         </div>
       </section>
 
-      <section className="band-cyan px-6 py-20 lg:py-28">
+      <section className="bg-muted px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-2">
             {highlights.map((h) => (

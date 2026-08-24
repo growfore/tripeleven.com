@@ -64,7 +64,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="band-cyan px-6 py-20 lg:py-28">
+      <section className="bg-muted px-6 py-20 lg:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl text-twilight sm:text-4xl">See it live, not in a deck.</h2>
           <p className="mt-4 text-lg text-twilight/75">

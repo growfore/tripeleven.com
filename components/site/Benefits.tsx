@@ -21,17 +21,17 @@ const items = [
 export function Benefits() {
   return (
     <section id="platform" className="bg-background px-6 py-20">
-      <div className="mx-auto max-w-7xl rounded-4xl band-cyan px-8 py-16 sm:px-14">
+      <div className="mx-auto max-w-7xl">
         <h2 className="text-center text-4xl text-twilight sm:text-5xl">
           Hello inquiries.
           <br />
           Bye-bye spreadsheet chaos.
         </h2>
-        <div className="mt-14 grid gap-12 md:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-xl bg-border md:grid-cols-3">
           {items.map((i) => (
-            <div key={i.title} className="text-center">
-              <i.icon className="mx-auto size-11 text-twilight" strokeWidth={2.4} />
-              <h3 className="mt-6 text-xl font-bold text-twilight">{i.title}</h3>
+            <div key={i.title} className="bg-card p-8">
+              <i.icon className="size-9 text-twilight" strokeWidth={2.2} />
+              <h3 className="mt-5 text-xl font-bold text-twilight">{i.title}</h3>
               <p className="mt-3 text-twilight/80">{i.body}</p>
             </div>
           ))}

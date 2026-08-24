@@ -12,37 +12,41 @@ const clients = [
 
 export function Clients() {
   return (
-    <section className="bg-background px-6 py-20">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-3xl text-twilight sm:text-4xl">Made for tour operators like you</h2>
-        <p className="mx-auto mt-4 max-w-xl text-center text-lg text-twilight/70">
-          Real agency websites, live and selling on TripEleven.
-        </p>
-        <ul className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {clients.map((c) => (
-            <li key={c.href}>
-              <a
-                href={c.href}
-                target="_blank"
-                rel="noreferrer"
-                className="group block overflow-hidden rounded-xl border border-teal-blue/15 bg-background shadow-[0_30px_80px_-40px_oklch(0.23_0.176_269/0.5)] transition-transform hover:-translate-y-1"
-              >
-                <Image
-                  src={`/product-images/clients/${c.shot}.jpg`}
-                  alt={`${c.name} website`}
-                  width={1440}
-                  height={900}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                  loading="lazy"
-                  className="aspect-[4/3] w-full object-cover object-top"
-                />
-                <p className="border-t border-teal-blue/10 px-4 py-3 text-center font-bold text-twilight/80 transition-colors group-hover:text-teal-blue">
-                  {c.name}
-                </p>
-              </a>
-            </li>
+    <section className="overflow-x-clip border-b border-border bg-background py-24">
+      <h2 className="px-6 text-center text-3xl text-twilight sm:text-4xl">Made for tour operators like you</h2>
+      <p className="mx-auto mt-4 max-w-xl px-6 text-center text-lg text-twilight/70">
+        Real agency websites, live and selling on TripEleven.
+      </p>
+      <div className="mt-14 overflow-hidden">
+        <div className="flex w-max animate-[marquee_45s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none">
+          {[0, 1].map((half) => (
+            <div key={half} aria-hidden={half === 1} className="flex">
+              {clients.map((c) => (
+                <a
+                  key={`${half}-${c.href}`}
+                  href={c.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  tabIndex={half === 1 ? -1 : undefined}
+                  className="group mx-4 block w-[44rem] shrink-0 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary"
+                >
+                  <Image
+                    src={`/product-images/clients/${c.shot}.jpg`}
+                    alt={`${c.name} website`}
+                    width={1440}
+                    height={900}
+                    sizes="704px"
+                    loading="lazy"
+                    className="aspect-[4/3] w-full object-cover object-top"
+                  />
+                  <p className="border-t border-border px-4 py-4 text-center text-lg font-bold text-twilight/80 transition-colors group-hover:text-primary">
+                    {c.name}
+                  </p>
+                </a>
+              ))}
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

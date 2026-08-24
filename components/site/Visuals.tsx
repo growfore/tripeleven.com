@@ -14,7 +14,7 @@ const steps = [
 
 export function BuilderVisual() {
   return (
-    <div className="rounded-3xl border border-border bg-card p-6 shadow-[0_30px_80px_-40px_oklch(0.23_0.176_269/0.5)]">
+    <div className="rounded-xl border border-border bg-card p-6">
       <div className="flex flex-wrap gap-2">
         {steps.map((s, i) => (
           <span

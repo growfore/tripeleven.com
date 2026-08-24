@@ -80,8 +80,8 @@ export function PricingSection() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
               className={cn(
-                "relative flex flex-col rounded-2xl border bg-card p-8 shadow-sm",
-                plan.highlighted && "border-primary shadow-xl",
+                "relative flex flex-col rounded-2xl border bg-card p-8",
+                plan.highlighted && "border-primary",
               )}
             >
               {plan.badge && (

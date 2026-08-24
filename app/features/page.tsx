@@ -90,7 +90,7 @@ export default function FeaturesPage() {
             ))}
           </div>
 
-          <div className="mt-16 rounded-4xl band-cyan px-8 py-14 text-center sm:px-14">
+          <div className="mt-16 rounded-4xl bg-muted px-8 py-14 text-center sm:px-14">
             <Badge>Under the hood</Badge>
             <h2 className="mx-auto mt-4 max-w-2xl text-3xl text-twilight sm:text-4xl">
               Built for real operators, not generic listings.
