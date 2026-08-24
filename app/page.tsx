@@ -5,6 +5,7 @@ import { FeatureSplit } from "@/components/site/FeatureSplit";
 import { BuilderVisual, ChannelVisual } from "@/components/site/Visuals";
 import { AiSection } from "@/components/site/AiSection";
 import { Testimonials } from "@/components/site/Testimonials";
+import { Clients } from "@/components/site/Clients";
 import { Pricing } from "@/components/site/Pricing";
 import { Cta } from "@/components/site/Cta";
 
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <Clients />
       <Benefits />
 
       <FeatureSplit
