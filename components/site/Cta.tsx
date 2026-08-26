@@ -1,12 +1,26 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
-import { Mountain } from "lucide-react";
 import { SIGNUP_URL } from "@/lib/site";
 
 export function Cta() {
   return (
     <section id="cta" className="px-6 pb-20">
-      <div className="mx-auto max-w-7xl rounded-4xl bg-twilight px-8 py-20 text-center text-primary-foreground sm:px-14">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.55 }}
+        className="relative mx-auto max-w-7xl overflow-hidden rounded-4xl bg-twilight px-8 py-20 text-center text-primary-foreground sm:px-14"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 rounded-4xl"
+          style={{
+            background: "radial-gradient(ellipse at 50% 0%, rgba(29,78,216,0.2), transparent 70%)",
+          }}
+        />
         <h2 className="mx-auto max-w-3xl text-4xl sm:text-5xl">
           Your logo, your site, your sales — out of the box.
         </h2>
@@ -26,9 +40,9 @@ export function Cta() {
           </Button>
         </div>
         <p className="mt-4 text-sm text-primary-foreground/60">
-          No credit card required • Cancel anytime
+          No credit card required \u2022 Cancel anytime
         </p>
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -97,8 +111,21 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="mx-auto mt-14 max-w-7xl border-t border-border pt-6 text-sm text-twilight/60">
-        © {new Date().getFullYear()} TripEleven. All rights reserved.
+      <div className="mx-auto mt-14 max-w-7xl border-t border-border pt-6 text-sm text-twilight/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <span>\u00a9 {new Date().getFullYear()} TripEleven. All rights reserved.</span>
+        <span className="inline-flex items-center gap-1.5">
+          <a href="https://growfore.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8">
+              <path
+                d="M 29 72 C 17 59, 17 37, 29 25 C 38 16, 51 13, 64 17"
+                fill="none"
+                stroke="#1D4ED8"
+                stroke-width="15"
+              />
+              <rect x="67" y="64" width="17" height="17" fill="#1D4ED8" />
+            </svg>
+          </a>
+        </span>
       </div>
     </footer>
   );

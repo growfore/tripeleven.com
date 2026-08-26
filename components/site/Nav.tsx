@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowRight, Menu, X } from "lucide-react";
 import Link from "next/link";
@@ -18,12 +18,24 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isActive = (href: string) => pathname === href;
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <header className="fixed top-0 w-screen z-99">
-      <div className="bg-twilight text-primary-foreground">
+      <div
+        className={`bg-twilight text-primary-foreground transition-all duration-300 ${
+          scrolled ? "h-0 overflow-hidden" : ""
+        }`}
+      >
         <div className="mx-auto flex max-w-7xl items-center justify-center gap-3 px-6 py-3 text-sm">
           <span>See a live agency running on TripEleven</span>
           <a
@@ -36,8 +48,16 @@ export function Nav() {
           </a>
         </div>
       </div>
-      <nav className="border-b border-border bg-white/80 shadow-sm backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <nav
+        className={`border-b border-border bg-white/80 backdrop-blur-md transition-shadow duration-300 ${
+          scrolled ? "shadow-md" : "shadow-sm"
+        }`}
+      >
+        <div
+          className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-all duration-300 ${
+            scrolled ? "py-3" : "py-5"
+          }`}
+        >
           <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-twilight">
             <span className="font-display">TripEleven</span>
           </Link>

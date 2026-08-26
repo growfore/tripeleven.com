@@ -42,7 +42,7 @@ const highlights = [
 const faqs = [
   {
     q: "How is the trip builder different from a form?",
-    a: "It's an 11-step guided flow: Basic Info → Trip Facts → Itinerary → Inclusions/Exclusions → Meetings → Media → Pricing → Additional Info → FAQs → SEO → Featured. Every step is purpose-built, not a dump of fields.",
+    a: "It\u2019s an 11-step guided flow: Basic Info → Trip Facts → Itinerary → Inclusions/Exclusions → Meetings → Media → Pricing → Additional Info → FAQs → SEO → Featured. Every step is purpose-built, not a dump of fields.",
   },
   {
     q: "Can I have multiple versions of one trip?",

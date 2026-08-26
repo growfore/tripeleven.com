@@ -86,10 +86,10 @@ export default function SeoPage() {
             </p>
             <ul className="mt-8 space-y-3">
               {[
-                "Featured tags and curated collections for internal linking and “best of” pages",
+                "Featured tags and curated collections for internal linking and \u201Cbest of\u201D pages",
                 "Reviews & testimonials with Google and Tripadvisor links, ratings and counts",
                 "Newsletter subscriber management with activation, unsubscribe and email blasts",
-                "Views & popularity tracking powering “most popular” widgets",
+                "Views & popularity tracking powering \u201Cmost popular\u201D widgets",
               ].map((p) => (
                 <li key={p} className="flex items-start gap-3 text-twilight/85">
                   <span className="mt-2 size-2 shrink-0 rounded-full bg-teal-blue" />

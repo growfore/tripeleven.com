@@ -1,4 +1,7 @@
+"use client";
+
 import { ChevronsRight, RefreshCw, LayoutTemplate } from "lucide-react";
+import { motion } from "motion/react";
 
 const items = [
   {
@@ -22,18 +25,33 @@ export function Benefits() {
   return (
     <section id="platform" className="bg-background px-6 py-20">
       <div className="mx-auto max-w-7xl">
-        <h2 className="text-center text-4xl text-twilight sm:text-5xl">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center text-4xl text-twilight sm:text-5xl"
+        >
           Hello inquiries.
           <br />
           Bye-bye spreadsheet chaos.
-        </h2>
+        </motion.h2>
         <div className="mt-14 grid gap-px overflow-hidden rounded-xl bg-border md:grid-cols-3">
-          {items.map((i) => (
-            <div key={i.title} className="bg-card p-8">
-              <i.icon className="size-9 text-twilight" strokeWidth={2.2} />
-              <h3 className="mt-5 text-xl font-bold text-twilight">{i.title}</h3>
-              <p className="mt-3 text-twilight/80">{i.body}</p>
-            </div>
+          {items.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: i * 0.12 }}
+              className="bg-card p-8"
+            >
+              <div className="flex size-14 items-center justify-center rounded-full bg-teal-blue/10">
+                <item.icon className="size-7 text-teal-blue" strokeWidth={2.2} />
+              </div>
+              <h3 className="mt-5 text-xl font-bold text-twilight">{item.title}</h3>
+              <p className="mt-3 text-twilight/80">{item.body}</p>
+            </motion.div>
           ))}
         </div>
       </div>

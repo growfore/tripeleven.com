@@ -26,12 +26,10 @@ const PLANS: Plan[] = [
     cta: { label: "Start for free", href: SIGNUP_URL },
     features: [
       "Publish trips with the 11-step builder",
-      "Itinerary variants with drag-and-drop days",
       "Blog & pages with block editor",
       "Media library with automatic WebP compression",
       "Your public website template",
       "Per-trip SEO fields",
-      "2 staff members",
     ],
   },
   {
@@ -81,7 +79,7 @@ export function PricingSection() {
               transition={{ duration: 0.5 }}
               className={cn(
                 "relative flex flex-col rounded-2xl border bg-card p-8",
-                plan.highlighted && "border-primary",
+                plan.highlighted && "border-primary shadow-[0_0_40px_-10px_rgba(29,78,216,0.3)]",
               )}
             >
               {plan.badge && (

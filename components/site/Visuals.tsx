@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 const steps = [
   "Basic info",
   "Trip facts",
@@ -17,8 +21,12 @@ export function BuilderVisual() {
     <div className="rounded-xl border border-border bg-card p-6">
       <div className="flex flex-wrap gap-2">
         {steps.map((s, i) => (
-          <span
+          <motion.span
             key={s}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: i * 0.04 }}
             className={
               i < 3
                 ? "rounded-full bg-twilight px-3 py-1.5 text-xs font-semibold text-primary-foreground"
@@ -26,7 +34,7 @@ export function BuilderVisual() {
             }
           >
             {i + 1}. {s}
-          </span>
+          </motion.span>
         ))}
       </div>
       <div className="mt-6 rounded-2xl bg-cyan-lite/60 p-5">
@@ -61,7 +69,7 @@ export function BuilderVisual() {
         {[
           ["Duration", "14 days"],
           ["Difficulty", "Moderate"],
-          ["Group size", "2–12"],
+          ["Group size", "2\u201312"],
         ].map(([k, v]) => (
           <div key={k} className="rounded-xl border border-border p-3">
             <p className="text-[11px] tracking-wide text-muted-foreground uppercase">{k}</p>
@@ -87,18 +95,28 @@ export function ChannelVisual() {
   ];
   return (
     <div className="relative rounded-3xl bg-cyan-lite p-10">
-      <div className="mx-auto flex max-w-xs flex-col items-center rounded-2xl bg-twilight p-6 text-center text-primary-foreground">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.45 }}
+        className="mx-auto flex max-w-xs flex-col items-center rounded-2xl bg-twilight p-6 text-center text-primary-foreground"
+      >
         <p className="text-sm tracking-widest text-surf uppercase">One workspace</p>
         <p className="mt-2 text-2xl font-bold">Your agency</p>
-      </div>
+      </motion.div>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
-        {chips.map((c) => (
-          <span
+        {chips.map((c, i) => (
+          <motion.span
             key={c}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35, delay: 0.1 + i * 0.05 }}
             className="rounded-full bg-card px-4 py-2 text-sm font-medium text-twilight shadow-sm"
           >
             {c}
-          </span>
+          </motion.span>
         ))}
       </div>
     </div>
