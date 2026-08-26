@@ -1,13 +1,14 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 const clients = [
   { name: "Walkthrough Nepal", href: "https://walkthroughnepal.com/", shot: "walkthrough-nepal" },
-  { name: "Essence Treks Nepal", href: "https://essencetreksnepal.com/", shot: "essence-treks" },
-  { name: "Into Nepal Treks", href: "https://new.intonepaltreks.com/", shot: "into-nepal-treks" },
   { name: "Lovely Trips", href: "http://lovelytrips.com.np/", shot: "lovely-trips" },
   { name: "HI Nepal Treks", href: "https://hinepaltreks.com/", shot: "hi-nepal-treks" },
   { name: "Summit Luxury Treks", href: "http://summitluxurytreks.com/", shot: "summit-luxury-treks" },
+  { name: "Essence Treks Nepal", href: "https://essencetreksnepal.com/", shot: "essence-treks" },
   { name: "Limestone Treks", href: "https://limestonetreks.com/", shot: "limestone-treks" },
+  { name: "Into Nepal Treks", href: "https://new.intonepaltreks.com/", shot: "into-nepal-treks" },
 ];
 
 export function Clients() {
@@ -28,20 +29,20 @@ export function Clients() {
                   target="_blank"
                   rel="noreferrer"
                   tabIndex={half === 1 ? -1 : undefined}
-                  className="group mx-4 block w-[44rem] shrink-0 overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary"
+                  className="relative group mx-4 block h-[90vh] w-50 md:w-[30vw] max-w-7xl shrink-0 overflow-hidden rounded-md border bg-card transition-colors hover:border-primary"
                 >
-                  <Image
+                  <div className="absolute top-90 left-40 hidden group-hover:block p-2  text-white rounded-sm hover:opacity-90 bg-primary">Visit Website</div>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
                     src={`/product-images/clients/${c.shot}.jpg`}
                     alt={`${c.name} website`}
-                    width={1440}
-                    height={900}
-                    sizes="704px"
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover object-top"
+                    className="h-full w-full object-cover object-top"
                   />
-                  <p className="border-t border-border px-4 py-4 text-center text-lg font-bold text-twilight/80 transition-colors group-hover:text-primary">
+
+                  {/*<p className="border-t border-border px-4 py-4 text-center text-lg font-bold text-twilight/80 transition-colors group-hover:text-primary">
                     {c.name}
-                  </p>
+                  </p>*/}
                 </a>
               ))}
             </div>
