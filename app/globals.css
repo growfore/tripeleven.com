@@ -99,6 +99,13 @@
   background-color: var(--cyan-lite);
 }
 
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
