@@ -40,7 +40,7 @@ export function Cta() {
           </Button>
         </div>
         <p className="mt-4 text-sm text-primary-foreground/60">
-          No credit card required \u2022 Cancel anytime
+          No credit card required | Cancel anytime
         </p>
       </motion.div>
     </section>
@@ -112,7 +112,7 @@ export function Footer() {
         ))}
       </div>
       <div className="mx-auto mt-14 max-w-7xl border-t border-border pt-6 text-sm text-twilight/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-        <span>\u00a9 {new Date().getFullYear()} TripEleven. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} TripEleven. All rights reserved.</span>
         <span className="inline-flex items-center gap-1.5">
           <a href="https://growfore.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8">
