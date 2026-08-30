@@ -1,5 +1,6 @@
-import Image from "next/image";
-import { Button } from "../ui/button";
+"use client";
+
+import { useRef } from "react";
 
 const clients = [
   { name: "Walkthrough Nepal", href: "https://walkthroughnepal.com/", shot: "walkthrough-nepal" },
@@ -12,42 +13,41 @@ const clients = [
 ];
 
 export function Clients() {
+  const scroller = useRef<HTMLDivElement>(null);
+  const scroll = (dir: number) =>
+    scroller.current?.scrollBy({ left: dir * scroller.current.clientWidth * 0.8, behavior: "smooth" });
+
   return (
     <section className="overflow-x-clip border-b border-border bg-background py-24">
-      <h2 className="px-6 text-center text-3xl text-twilight sm:text-4xl">Made for tour operators like you</h2>
+      <div className="flex items-center justify-between px-6">
+        <h2 className="text-3xl text-twilight sm:text-4xl">Made for tour operators like you</h2>
+        <div className="flex gap-2">
+          <button onClick={() => scroll(-1)} aria-label="Scroll left" className="rounded-full border px-3 py-2 text-twilight transition-colors hover:border-primary hover:text-primary">←</button>
+          <button onClick={() => scroll(1)} aria-label="Scroll right" className="rounded-full border px-3 py-2 text-twilight transition-colors hover:border-primary hover:text-primary">→</button>
+        </div>
+      </div>
       <p className="mx-auto mt-4 max-w-xl px-6 text-center text-lg text-twilight/70">
         Real agency websites, live and selling on TripEleven.
       </p>
-      <div className="mt-14 overflow-hidden">
-        <div className="flex w-max animate-[marquee_45s_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none">
-          {[0, 1].map((half) => (
-            <div key={half} aria-hidden={half === 1} className="flex">
-              {clients.map((c) => (
-                <a
-                  key={`${half}-${c.href}`}
-                  href={c.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  tabIndex={half === 1 ? -1 : undefined}
-                  className="relative group mx-4 block h-[90vh] w-50 md:w-[30vw] max-w-7xl shrink-0 overflow-hidden rounded-md border bg-card transition-colors hover:border-primary"
-                >
-                  <div className="absolute top-90 left-40 hidden group-hover:block p-2  text-white rounded-sm hover:opacity-90 bg-primary">Visit Website</div>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={`/product-images/clients/${c.shot}.jpg`}
-                    alt={`${c.name} website`}
-                    loading="lazy"
-                    className="h-full w-full object-cover object-top"
-                  />
-
-                  {/*<p className="border-t border-border px-4 py-4 text-center text-lg font-bold text-twilight/80 transition-colors group-hover:text-primary">
-                    {c.name}
-                  </p>*/}
-                </a>
-              ))}
-            </div>
-          ))}
-        </div>
+      <div ref={scroller} className="mt-14 flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2">
+        {clients.map((c) => (
+          <a
+            key={c.href}
+            href={c.href}
+            target="_blank"
+            rel="noreferrer"
+            className="relative group mx-4 block h-[90vh] w-50 shrink-0 snap-start overflow-hidden rounded-md border bg-card transition-colors hover:border-primary"
+          >
+            <div className="absolute top-90 left-40 hidden group-hover:block p-2  text-white rounded-sm hover:opacity-90 bg-primary">Visit Website</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`/product-images/clients/${c.shot}.jpg`}
+              alt={`${c.name} website`}
+              loading="lazy"
+              className="h-full w-full object-cover object-top"
+            />
+          </a>
+        ))}
       </div>
     </section>
   );
