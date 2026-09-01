@@ -34,7 +34,7 @@ export default function Home() {
         id="builder"
         eyebrow="Trip management"
         title="Built for real operators, not generic listings."
-        body="An 11-step trip builder with tabbed itinerary variants, drag-and-drop days, altitude charts, FAQ groups and pricing tiers — everything a trekking or adventure operator actually needs."
+        body="A structured trip builder with tabbed itinerary variants, drag-and-drop days, altitude charts, FAQ groups and pricing tiers — everything a trekking or adventure operator actually needs."
         points={[
           "Multiple itinerary variants (Standard / Premium) with sortable days, meals, distance and ascent",
           "Live altitude profiles built from your own location and elevation points",

@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 const stats = [
-  { value: "11", label: "steps in the trip builder" },
+  { value: "100%", label: "website built without code" },
   { value: "10", label: "topics per AI generation batch" },
   { value: "1200×630", label: "Open Graph media per trip" },
   { value: "USD/NPR", label: "multi-currency display" },

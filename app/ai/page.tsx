@@ -18,7 +18,7 @@ export const metadata: Metadata = pageMetadata({
 const faqs = [
   {
     q: "Is the AI output ready to publish?",
-    a: "It's a strong first draft, not a finished product. Every generated itinerary lands in the same 11-step builder so your team reviews, edits and polishes before publishing.",
+    a: "It's a strong first draft, not a finished product. Every generated itinerary lands in the same trip builder so your team reviews, edits and polishes before publishing.",
   },
   {
     q: "How many trips can I generate at once?",
@@ -36,7 +36,7 @@ export default function AiPage() {
       <PageHero
         eyebrow="AI generation"
         title="From topic to ready-to-sell trip in minutes."
-        subtitle="Batch-generate complete itineraries with AI, then refine them in the same 11-step builder your team already uses. AI drafts, humans polish, travelers book."
+        subtitle="Batch-generate complete itineraries with AI, then refine them in the same trip builder your team already uses. AI drafts, humans polish, travelers book."
       >
         <Button variant="hero" size="xl" asChild>
           <a href={SIGNUP_URL}>Try AI trip generation</a>

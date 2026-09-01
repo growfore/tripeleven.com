@@ -21,7 +21,7 @@ We're an **all-in-one, multi-tenant platform for tour & travel agencies** to bui
 
 ## Trip management — the core
 
-- **An 11-step trip builder**, not a dump of form fields: Basic Info → Trip Facts → Itinerary → Inclusions/Exclusions → Meetings & Drop-offs → Media & Highlights → Pricing → Additional Info → FAQs → SEO → Featured.
+- **A structured trip builder**, not a dump of form fields: Basic Info → Trip Facts → Itinerary → Inclusions/Exclusions → Meetings & Drop-offs → Media & Highlights → Pricing → Additional Info → FAQs → SEO → Featured.
 - **Multiple itinerary variants** — tabbed variants (Standard / Premium) per trip, each with **drag-and-drop sortable days** (day number, title, description, duration, distance, ascent/descent, meals, accommodation, up to 5 images per day).
 - **Rich trip facts** — duration, group size, meals, best seasons, difficulty (Easy/Moderate/Hard/Extreme), transportation, max altitude, accommodation, video intro, locations.
 - **Altitude charts** — build elevation profiles from location/altitude points with a **live area-chart preview** (a real differentiator for trekking agencies).
@@ -37,7 +37,7 @@ We're an **all-in-one, multi-tenant platform for tour & travel agencies** to bui
 
 - **Batch itinerary generation via Claude AI** — type up to 10 topics (one per line), optionally add a focus/style ("luxury, 12–14 days, family-friendly"), and generate full trip itineraries in one batch.
 - **Review → Edit → Publish workflow** — each generated item shows its day count, can be checked, retried on failure, edited in the full trip builder, and submitted straight into your catalog.
-- Generated output lands directly in the same 11-step builder, so AI drafts are always human-polished.
+- Generated output lands directly in the same trip builder, so AI drafts are always human-polished.
 
 ## Rich content engine — blog + pages
 
@@ -91,7 +91,7 @@ We're an **all-in-one, multi-tenant platform for tour & travel agencies** to bui
 
 ## Suggested copy angles
 
-1. **"From topic to bookable trip in minutes"** — AI generation + 11-step builder.
+1. **"From topic to bookable trip in minutes"** — AI generation + trip builder.
 2. **"A complete agency website without developers"** — template + no-code dashboard.
 3. **"SEO-first, everywhere"** — schema markup, OG, redirects, alt-text automation.
 4. **"Your travelers, your bookings, your payments"** — secure online checkout, bookings, wishlists, reviews.

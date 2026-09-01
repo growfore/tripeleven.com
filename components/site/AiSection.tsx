@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 const steps = [
   { icon: Sparkles, title: "Prompt", body: "Drop in up to 10 trip topics and a style: \u201Cluxury, 12\u201314 days, family-friendly\u201D." },
   { icon: ListChecks, title: "Generate", body: "Claude drafts full day-by-day itineraries in one batch, with day counts and retries." },
-  { icon: PenLine, title: "Polish", body: "Every draft opens in the same 11-step builder for a human edit." },
+  { icon: PenLine, title: "Polish", body: "Every draft opens in the same trip builder for a human edit." },
   { icon: Rocket, title: "Publish", body: "Submit straight into your catalog as a draft or a live, ready-to-sell trip." },
 ];
 
@@ -25,7 +25,7 @@ export function AiSection() {
           <p className="mb-4 text-sm font-bold tracking-widest text-surf uppercase">AI generation</p>
           <h2 className="text-4xl sm:text-5xl">From topic to ready-to-sell trip in minutes.</h2>
           <p className="mt-6 text-lg text-primary-foreground/75">
-            Batch-generate complete itineraries with AI, then refine them in the same 11-step
+            Batch-generate complete itineraries with AI, then refine them in the same trip
             builder your team already uses. AI drafts, humans polish, travelers book.
           </p>
         </motion.div>

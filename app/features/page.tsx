@@ -11,7 +11,7 @@ import { SIGNUP_URL } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Features — The complete travel agency platform",
   description:
-    "Explore TripEleven's features: an 11-step trip builder, AI itinerary generation, trip inquiries, a brandable website template, and a built-in SEO toolkit.",
+    "Explore TripEleven's features: a structured trip builder, AI itinerary generation, trip inquiries, a brandable website template, and a built-in SEO toolkit.",
   path: "/features",
 });
 
@@ -19,7 +19,7 @@ const features = [
   {
     icon: LayoutTemplate,
     title: "Trip builder",
-    body: "An 11-step builder with tabbed itinerary variants, drag-and-drop days, altitude charts, FAQ groups and pricing tiers.",
+    body: "A structured builder with tabbed itinerary variants, drag-and-drop days, altitude charts, FAQ groups and pricing tiers.",
     href: "/trip-builder",
   },
   {
@@ -97,7 +97,7 @@ export default function FeaturesPage() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-twilight/75">
               Multi-tenant isolation, staff roles (Owner, Admin, Manager, Editor), a DRAFT →
-              PUBLISHED pipeline, verification before publishing, and an 11-step builder tuned for
+              PUBLISHED pipeline, verification before publishing, and a trip builder tuned for
               trekking and adventure agencies — altitude profiles, departures and slots included.
             </p>
             <Button variant="hero" size="xl" className="mt-8" asChild>

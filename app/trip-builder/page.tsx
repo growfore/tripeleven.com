@@ -10,9 +10,9 @@ import { pageMetadata } from "@/lib/seo";
 import { SIGNUP_URL } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Trip Builder — An 11-step builder for real operators",
+  title: "Trip Builder — A builder for real operators",
   description:
-    "TripEleven's 11-step trip builder: itinerary variants, drag-and-drop days, altitude charts, FAQ groups, pricing tiers and departures — built for tour and trekking operators.",
+    "TripEleven's trip builder: itinerary variants, drag-and-drop days, altitude charts, FAQ groups, pricing tiers and departures — built for tour and trekking operators.",
   path: "/trip-builder",
 });
 
@@ -42,7 +42,7 @@ const highlights = [
 const faqs = [
   {
     q: "How is the trip builder different from a form?",
-    a: "It\u2019s an 11-step guided flow: Basic Info → Trip Facts → Itinerary → Inclusions/Exclusions → Meetings → Media → Pricing → Additional Info → FAQs → SEO → Featured. Every step is purpose-built, not a dump of fields.",
+    a: "It\u2019s a guided flow: Basic Info, Trip Facts, Itinerary, Inclusions/Exclusions, Meetings, Media, Pricing, Additional Info, FAQs, SEO and Featured. Every step is purpose-built, not a dump of fields.",
   },
   {
     q: "Can I have multiple versions of one trip?",
@@ -59,7 +59,7 @@ export default function TripBuilderPage() {
     <main>
       <PageHero
         eyebrow="Trip management"
-        title="An 11-step builder, not a dump of form fields."
+        title="A builder, not a dump of form fields."
         subtitle="The core of TripEleven — built for the way trekking, touring and adventure agencies actually structure a product."
       >
         <Button variant="hero" size="xl" asChild>
@@ -77,7 +77,7 @@ export default function TripBuilderPage() {
               The flow
             </p>
             <h2 className="max-w-xl text-4xl text-twilight sm:text-5xl">
-              Eleven steps. Zero spreadsheets.
+              Structured steps. Zero spreadsheets.
             </h2>
             <p className="mt-6 max-w-xl text-lg text-twilight/75">
               Basic info, trip facts, itinerary, inclusions, meetings and drop-offs, media and
