@@ -20,11 +20,11 @@ const faqs = [
   },
   {
     q: "Can I get a walkthrough?",
-    a: "Yes. Send us a message and we'll schedule a live walkthrough of the dashboard, trip builder and booking flow.",
+    a: "Yes. Send us a message and we'll schedule a live walkthrough of the dashboard and trip builder.",
   },
   {
     q: "I already run an agency. How do I migrate?",
-    a: "We help Enterprise customers import trips, configure payments and launch their website — dedicated onboarding is included.",
+    a: "We help Enterprise customers import trips, set up custom branding and launch their website — dedicated onboarding is included.",
   },
 ];
 

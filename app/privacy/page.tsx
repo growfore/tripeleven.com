@@ -17,15 +17,15 @@ const sections: { h: string; p: string }[] = [
   },
   {
     h: "2. Data we collect",
-    p: "We collect account information (name, email, agency details) when you register; content you create in the platform (trips, blog posts, media, menus); and booking information processed on behalf of agencies, including traveler names, contact details and payment references.",
+    p: "We collect account information (name, email, agency details) when you register; content you create in the platform (trips, blog posts, media, menus); and inquiry information submitted through agency websites, including traveler names and contact details.",
   },
   {
     h: "3. How we use data",
-    p: "We use data to operate the platform, process and confirm bookings, deliver transactional emails, send newsletters you subscribe to, prevent abuse, and improve the product. Payment details are handled by our payment provider under its own terms; we do not store full card numbers.",
+    p: "We use data to operate the platform, receive and store trip inquiries for agencies, deliver transactional emails, send newsletters you subscribe to, prevent abuse, and improve the product.",
   },
   {
     h: "4. Data separation",
-    p: "TripEleven is multi-tenant. Agency data — trips, content, bookings, customers and media — is isolated per workspace and is never shared between agencies.",
+    p: "TripEleven is multi-tenant. Agency data — trips, content, inquiries, customers and media — is isolated per workspace and is never shared between agencies.",
   },
   {
     h: "5. Cookies",

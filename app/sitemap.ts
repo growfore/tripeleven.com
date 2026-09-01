@@ -7,7 +7,6 @@ const routes = [
   "/features",
   "/trip-builder",
   "/ai",
-  "/bookings",
   "/seo",
   "/use-cases",
   "/about",

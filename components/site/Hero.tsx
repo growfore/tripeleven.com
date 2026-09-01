@@ -12,8 +12,8 @@ const proofs = [
     rest: "every agency gets an isolated workspace, ready to brand.",
   },
   {
-    bold: "Sell trips directly:",
-    rest: "secure online checkout, departures, deposits and multi-currency built in.",
+    bold: "Get inquiries, not forms:",
+    rest: "every trip gets an inquiry form and your WhatsApp link, all in one dashboard.",
   },
   {
     bold: "SEO-first by default:",
@@ -43,8 +43,8 @@ export function Hero() {
             className="mt-7 max-w-lg text-lg text-twilight/75"
           >
             TripEleven is the platform for tour operators, trekking companies and DMCs —
-            build your catalog, publish a full website, and take bookings without writing a line of
-            code.
+            build your catalog, publish a full website, and collect trip inquiries without writing a
+            line of code.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

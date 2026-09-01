@@ -12,6 +12,7 @@ type Plan = {
   name: string;
   description: string;
   price: string;
+  priceSuffix?: string;
   badge?: string;
   highlighted?: boolean;
   cta: { label: string; href: string };
@@ -21,33 +22,62 @@ type Plan = {
 const PLANS: Plan[] = [
   {
     name: "Free",
-    description: "Build and launch your trip catalog — no card required.",
+    description: "Launch your branded website and start getting inquiries — no card required.",
     price: "$0",
+    priceSuffix: "forever",
     cta: { label: "Start for free", href: SIGNUP_URL },
     features: [
-      "Publish trips with the 11-step builder",
-      "Blog & pages with block editor",
-      "Media library with automatic WebP compression",
-      "Your public website template",
+      "Branded trip website & catalog",
+      "Up to 5 trips & 3 blog posts",
+      "Trip inquiries (email / WhatsApp)",
+      "Media library with auto WebP",
       "Per-trip SEO fields",
+      "1 staff seat",
+      "TripEleven footer",
+    ],
+  },
+  {
+    name: "Launch",
+    description: "Everything you need to grow a real travel business online.",
+    price: "$29",
+    priceSuffix: "month",
+    badge: "Most Popular",
+    highlighted: true,
+    cta: { label: "Start for free", href: SIGNUP_URL },
+    features: [
+      "Everything in Free",
+      "Unlimited trips & posts",
+      "Custom domain & no TripEleven branding",
+      "Custom template, palette & fonts",
+      "AI itinerary generation (BYO key)",
+      "2 staff seats",
+      "Priority support",
+    ],
+  },
+  {
+    name: "Business",
+    description: "For operators running several brands or teams.",
+    price: "$79",
+    priceSuffix: "month",
+    cta: { label: "Start for free", href: SIGNUP_URL },
+    features: [
+      "Everything in Launch",
+      "Read-only API access",
+      "Multi-site & multiple custom domains",
+      "Unlimited staff seats",
+      "Priority support",
     ],
   },
   {
     name: "Enterprise",
-    description: "The full system: bookings, payments and priority onboarding.",
+    description: "White-label, dedicated onboarding and custom terms.",
     price: "Custom",
-    badge: "Most Popular",
-    highlighted: true,
     cta: { label: "Contact us", href: "/contact" },
     features: [
-      "Everything in Free",
-      "Bookings & payments with secure online checkout",
-      "Deposits, full payment and multi-currency (USD / NPR)",
-      "Custom domain & no branding",
-      "Unlimited trips, staff and storage",
-      "AI itinerary generation with unlimited batches",
-      "PDF itineraries & email delivery",
-      "Dedicated onboarding & support",
+      "Everything in Business",
+      "White-label (remove TripEleven)",
+      "Dedicated onboarding",
+      "Custom volume & terms",
     ],
   },
 ];
@@ -63,13 +93,13 @@ export function PricingSection() {
               Start free. Scale when you&apos;re ready.
             </h2>
             <p className="max-w-xl text-center text-lg leading-relaxed tracking-tight text-muted-foreground">
-              Try the platform free for as long as you need — upgrade for the full
-              booking and payment system.
+              Your branded website, trip catalog and inquiry engine — free. Add
+              custom branding, AI itineraries and more when you grow.
             </p>
           </div>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {PLANS.map((plan) => (
             <motion.div
               key={plan.name}
@@ -78,7 +108,7 @@ export function PricingSection() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
               className={cn(
-                "relative flex flex-col rounded-2xl border bg-card p-8",
+                "relative flex flex-col rounded-2xl border bg-card p-6",
                 plan.highlighted && "border-primary shadow-[0_0_40px_-10px_rgba(29,78,216,0.3)]",
               )}
             >
@@ -94,22 +124,22 @@ export function PricingSection() {
               <h3 className="text-lg font-semibold">{plan.name}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{plan.description}</p>
 
-              <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-4xl font-bold tracking-tight">{plan.price}</span>
-                {plan.name === "Free" && (
-                  <span className="text-sm text-muted-foreground">/ forever</span>
+              <div className="mt-5 flex items-baseline gap-1">
+                <span className="text-3xl font-bold tracking-tight">{plan.price}</span>
+                {plan.priceSuffix && (
+                  <span className="text-sm text-muted-foreground">/ {plan.priceSuffix}</span>
                 )}
               </div>
 
               <Button
                 variant={plan.highlighted ? "default" : "outline"}
-                className="mt-6 w-full"
+                className="mt-5 w-full"
                 asChild
               >
                 <Link href={plan.cta.href}>{plan.cta.label}</Link>
               </Button>
 
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-6 space-y-2.5">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 shrink-0 text-primary" />

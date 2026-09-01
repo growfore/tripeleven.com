@@ -18,12 +18,12 @@ const audiences = [
   {
     icon: Mountain,
     title: "Tour & trekking operators",
-    body: "Altitude charts, itinerary variants, departures with capacity, and PDF itineraries make TripEleven the natural home for Himalaya and trekking operators — built for the way you actually structure a trek.",
+    body: "Altitude charts, itinerary variants, departures with capacity, and printable trip facts make TripEleven the natural home for Himalaya and trekking operators — built for the way you actually structure a trek.",
   },
   {
     icon: Map,
     title: "Destination management companies",
-    body: "Each client keeps its own catalog, content and bookings, cleanly separated. Manage every brand from one dashboard with full control over who can do what.",
+    body: "Each client keeps its own catalog, content and inquiries, cleanly separated. Manage every brand from one dashboard with full control over who can do what.",
   },
   {
     icon: Waves,
@@ -33,7 +33,7 @@ const audiences = [
   {
     icon: Compass,
     title: "Boutique travel agencies",
-    body: "Launch a complete, bookable website with your own branding — no developers, no code. Curate featured trips, menus, testimonials and team from the dashboard.",
+    body: "Launch a complete website with your own branding — no developers, no code. Curate featured trips, menus, testimonials and team from the dashboard, and collect inquiries from travelers.",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function UseCasesPage() {
       <PageHero
         eyebrow="Who it's for"
         title="Built for real operators."
-        subtitle="TripEleven is an all-in-one platform for tour & travel agencies that build, manage and sell trips online."
+        subtitle="TripEleven is an all-in-one platform for tour & travel agencies that build, manage and promote trips online."
       >
         <Button variant="hero" size="xl" asChild>
           <a href={SIGNUP_URL}>Start for free</a>
@@ -70,7 +70,7 @@ export default function UseCasesPage() {
               Every agency gets its own workspace.
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-twilight/75">
-              Your catalog, content, bookings and branding — all managed from one dashboard. Invite
+              Your catalog, content, inquiries and branding — all managed from one dashboard. Invite
               your team with different access levels, and publish trips whenever they&apos;re ready.
             </p>
             <Button variant="hero" size="xl" className="mt-8" asChild>

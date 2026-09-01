@@ -42,9 +42,10 @@ lib/
 ## Pricing section (`components/ui/pricing-4.tsx`)
 
 - `section id="pricing"` — keep the id; nav anchors and page CTA link to it on `/`.
-- Plans: **Free $0** (trip catalog, AI, website — no bookings) and **Enterprise** (Custom, "Contact us" → `/contact`; adds bookings, secure online payments, custom domain, onboarding).
-- Free CTA → `https://app.tripeleven.com/signup` (from `lib/site.ts` `SIGNUP_URL`). Enterprise CTA → `/contact`.
-- No monthly/yearly toggle, no NumberFlow — two static cards.
+- Plans: **Free $0** (branded website, 5 trips/3 posts, trip inquiries), **Launch $29/mo** (unlimited trips, custom domain/branding, AI generation BYO key, no TripEleven footer), **Business $79/mo** (API access, multi-site, unlimited staff), **Enterprise** (Custom, "Contact us" → `/contact`; white-label + onboarding).
+- Free/Launch/Business CTAs → `https://app.tripeleven.com/signup` (from `lib/site.ts` `SIGNUP_URL`). Enterprise CTA → `/contact`.
+- No monthly/yearly toggle, no NumberFlow — four static cards.
+- Bookings & payments are NOT marketed (feature inactive); the de-marketed `/bookings` page redirects to `/contact`.
 
 ## Design system
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ChevronsRight, Wand2, CreditCard, Globe, ImageIcon, Search, LayoutTemplate } from "lucide-react";
+import { ChevronsRight, Wand2, MessageCircle, Globe, ImageIcon, Search, LayoutTemplate } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,7 +11,7 @@ import { SIGNUP_URL } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Features — The complete travel agency platform",
   description:
-    "Explore TripEleven's features: an 11-step trip builder, AI itinerary generation, bookings & payments, a brandable website template, and a built-in SEO toolkit.",
+    "Explore TripEleven's features: an 11-step trip builder, AI itinerary generation, trip inquiries, a brandable website template, and a built-in SEO toolkit.",
   path: "/features",
 });
 
@@ -29,10 +29,10 @@ const features = [
     href: "/ai",
   },
   {
-    icon: CreditCard,
-    title: "Bookings & payments",
-    body: "Secure online checkout with payment verification, deposits or full payment, multi-currency, and a full booking lifecycle dashboard.",
-    href: "/bookings",
+    icon: MessageCircle,
+    title: "Trip inquiries",
+    body: "Every trip gets an inquiry form and your WhatsApp link — leads land in one clean dashboard so you can respond fast.",
+    href: "/contact",
   },
   {
     icon: Globe,
@@ -60,7 +60,7 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="Platform"
         title="One dashboard. Your whole agency."
-        subtitle="Trip management, content, media, bookings, payments and SEO — every moving part of a travel agency in a single, multi-tenant workspace."
+        subtitle="Trip management, content, media, inquiries, a brandable website and SEO — every moving part of a travel agency in a single, multi-tenant workspace."
       >
         <Button variant="hero" size="xl" asChild>
           <a href={SIGNUP_URL}>Start for free</a>

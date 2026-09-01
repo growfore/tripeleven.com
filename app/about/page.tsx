@@ -8,7 +8,7 @@ import { SIGNUP_URL } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "About — Why we built TripEleven",
   description:
-    "TripEleven is an all-in-one platform for travel agencies: trip management, AI itineraries, bookings, payments and SEO in one dashboard. Learn why we built it.",
+    "TripEleven is an all-in-one platform for travel agencies: trip management, AI itineraries, trip inquiries, custom branding and SEO in one dashboard. Learn why we built it.",
   path: "/about",
 });
 
@@ -16,7 +16,7 @@ const stats = [
   { value: "11", label: "steps in the trip builder" },
   { value: "10", label: "topics per AI generation batch" },
   { value: "1200×630", label: "Open Graph media per trip" },
-  { value: "USD/NPR", label: "multi-currency payments" },
+  { value: "USD/NPR", label: "multi-currency display" },
 ];
 
 export default function AboutPage() {
@@ -37,18 +37,18 @@ export default function AboutPage() {
             <div className="mt-6 space-y-5 text-lg text-twilight/75">
               <p>
                 TripEleven is a platform for tour operators, trekking companies, DMCs and boutique
-                travel agencies to build, manage and sell trips online — plus a fully customizable
+                travel agencies to build, manage and promote trips online — plus a fully customizable
                 public website template.
               </p>
               <p>
-                Every agency gets its own isolated workspace: its own catalog, content, bookings,
-                payments and branding. Behind one shared dashboard, your team runs the whole
+                Every agency gets its own isolated workspace: its own catalog, content, inquiries,
+                branding and media. Behind one shared dashboard, your team runs the whole
                 operation — trip management, AI generation, a rich content engine, a production-grade
-                media library, commerce, and an SEO toolkit that&apos;s built in, not bolted on.
+                media library, and an SEO toolkit that&apos;s built in, not bolted on.
               </p>
               <p>
                 Our pitch in one line: <em>launch a complete travel agency website — catalog,
-                bookings, payments, SEO, content and AI trip generation — without writing a line of
+                inquiries, SEO, content and AI trip generation — without writing a line of
                 code.</em>
               </p>
             </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl text-twilight sm:text-4xl">See it live, not in a deck.</h2>
           <p className="mt-4 text-lg text-twilight/75">
-            essencetreksnepal.com is a real agency running on TripEleven — catalog, bookings and
+            essencetreksnepal.com is a real agency running on TripEleven — catalog, inquiries and
             content all driven from the dashboard.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

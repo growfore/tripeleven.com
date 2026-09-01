@@ -11,7 +11,7 @@ import { SIGNUP_URL } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Pricing — Start free, upgrade when you're ready",
   description:
-    "TripEleven pricing: start free with your trip catalog and website. Upgrade to Enterprise for AI generation, bookings, secure online payments and dedicated support.",
+    "TripEleven pricing: start free with your trip catalog and website. Upgrade for custom branding, AI itinerary generation and more.",
   path: "/pricing",
 });
 
@@ -22,19 +22,23 @@ const faqs = [
   },
   {
     q: "What's included in the Free plan?",
-    a: "The Free plan includes the full trip builder, itinerary variants, the content editor, the media library and your public website — everything you need to launch and start selling trips. AI itinerary generation is part of Enterprise.",
+    a: "The Free plan includes the full trip builder, the content editor, the media library and your public website — everything you need to launch and start getting inquiries. AI itinerary generation and custom branding are available on paid plans.",
   },
   {
-    q: "How do I switch to Enterprise?",
-    a: "Contact us through the form and we'll scope a plan around your agency — number of trips, staff, storage and expected booking volume. Most agencies are live within days.",
+    q: "How do I switch to a paid plan?",
+    a: "Start for free, then upgrade to Launch or Business when you need unlimited trips, custom branding or AI itinerary generation.",
   },
   {
     q: "Can I keep my own domain and branding?",
-    a: "Yes. Enterprise includes a custom domain and removes TripEleven branding from your public site.",
+    a: "Yes. Launch and above include a custom domain and remove TripEleven branding from your public site.",
   },
   {
-    q: "Do you offer onboarding?",
-    a: "Enterprise includes dedicated onboarding — we help you import trips, configure payments and launch your website.",
+    q: "Does AI itinerary generation require setup?",
+    a: "AI itinerary generation works with your own API key — bring your key, enable the feature, and generate day-by-day itineraries in minutes. It's included on Launch and above.",
+  },
+  {
+    q: "What's in Enterprise?",
+    a: "Enterprise adds white-label, dedicated onboarding and custom volume and terms. Contact us and we'll scope a plan around your agency.",
   },
 ];
 
@@ -44,7 +48,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Pricing"
         title="Start free. Scale when you're ready."
-        subtitle="The Free plan launches your catalog and website. When your agency needs the full booking and payment system, move to Enterprise."
+        subtitle="The Free plan launches your catalog and website. When you're ready for custom branding, AI itineraries and more, upgrade or talk to us."
       >
         <Button variant="hero" size="xl" asChild>
           <a href={SIGNUP_URL}>Start for free</a>

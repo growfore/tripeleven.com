@@ -17,7 +17,7 @@ const sections: { h: string; p: string }[] = [
   },
   {
     h: "2. The service",
-    p: "TripEleven provides a platform for travel agencies: trip management, AI itinerary generation, content publishing, media management, bookings, payments and a public website template. We may add, change or retire features over time with reasonable notice.",
+    p: "TripEleven provides a platform for travel agencies: trip management, AI itinerary generation, content publishing, media management, trip inquiries and a public website template. We may add, change or retire features over time with reasonable notice.",
   },
   {
     h: "3. Accounts & workspace",
@@ -28,8 +28,8 @@ const sections: { h: string; p: string }[] = [
     p: "You retain all rights to content you upload and create. You grant us the right to host, process and display it to operate the service. You confirm your content does not infringe others' rights or violate applicable law.",
   },
   {
-    h: "5. Payments & bookings",
-    p: "Bookings and payments are processed through our payment provider. Deposits, refunds and cancellation policies are set by your agency for its travelers. We are not a party to the travel contract between an agency and its customers.",
+    h: "5. Inquiries & traveler data",
+    p: "Trip inquiries submitted through a booking agency's website are received and stored by that agency through the platform. TripEleven transmits and stores this data on the agency's behalf; the agency is responsible for its own inquiries, replies, deposits, refunds and cancellation policies with its travelers. We are not a party to the travel contract between an agency and its customers.",
   },
   {
     h: "6. Acceptable use",

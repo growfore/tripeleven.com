@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Launch a complete travel agency website: trip catalog, AI itineraries, bookings, secure online payments and SEO — no code required.",
+    "Launch a complete travel agency website: trip catalog, AI itineraries, trip inquiries, custom branding and SEO — no code required.",
   icons: "/favicon.ico",
   alternates: { canonical: SITE_URL },
   openGraph: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${SITE_NAME} — Trip platform for travel agencies`,
     description:
-      "Launch a complete travel agency website: trip catalog, AI itineraries, bookings, secure online payments and SEO — no code required.",
+      "Launch a complete travel agency website: trip catalog, AI itineraries, trip inquiries, custom branding and SEO — no code required.",
     url: SITE_URL,
     images: [{ url: "/images/hero-trek.jpg", width: 1200, height: 630, alt: SITE_NAME }],
   },

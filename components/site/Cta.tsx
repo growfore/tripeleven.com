@@ -54,7 +54,7 @@ const cols = [
       { label: "Features", href: "/features" },
       { label: "Trip builder", href: "/trip-builder" },
       { label: "AI generation", href: "/ai" },
-      { label: "Bookings & payments", href: "/bookings" },
+      { label: "Trip inquiries", href: "/contact" },
       { label: "SEO toolkit", href: "/seo" },
       { label: "Pricing", href: "/pricing" },
     ],

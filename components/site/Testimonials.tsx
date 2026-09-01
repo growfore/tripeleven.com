@@ -16,7 +16,7 @@ const quotes = [
     role: "Product Lead \u2022 Andes DMC",
   },
   {
-    text: "Inquiries, deposits and payouts finally live in one place. No more spreadsheets, no more double-booked departures.",
+    text: "Inquiries from our website land in one dashboard, and WhatsApp handles the rest. No more spreadsheets, no more missed leads.",
     name: "Sam Whitfield",
     role: "Operations \u2022 Wild Coast Safaris",
   },

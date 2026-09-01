@@ -11,7 +11,7 @@ const links = [
   { label: "Features", href: "/features" },
   { label: "Trip builder", href: "/trip-builder" },
   { label: "AI", href: "/ai" },
-  { label: "Bookings", href: "/bookings" },
+  { label: "Inquiries", href: "/contact" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];

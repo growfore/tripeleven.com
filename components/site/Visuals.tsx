@@ -83,13 +83,13 @@ export function BuilderVisual() {
 
 export function ChannelVisual() {
   const chips = [
-    "Secure checkout",
+    "Trip inquiries",
     "Google Things to do",
     "Tripadvisor",
     "Viator",
     "Your website",
     "Newsletter",
-    "PDF itineraries",
+    "Print itineraries",
     "Reviews",
     "Wishlists",
   ];

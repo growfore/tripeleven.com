@@ -56,16 +56,16 @@ export default function Home() {
         id="inquiries"
         tone="tint"
         reverse
-        eyebrow="Bookings & payments"
-        title="Your travelers, your bookings, your payments."
-        body="Travelers register, request a departure and pay through our secure online checkout. You watch every booking move from pending to confirmed in one dashboard."
+        eyebrow="Trip inquiries"
+        title="Leads come to you. You close the way your guests already talk."
+        body="Travelers send trip inquiries right from your site — through a simple form, email or straight to WhatsApp. You watch every lead land in one dashboard and respond on your terms."
         points={[
-          "Secure payment checkout with verification, deposits or full payment",
-          "Full lifecycle: pending → confirmed → completed, cancelled or failed",
-          "Customer accounts with reviews, ratings and wishlists, in USD or NPR",
+          "Inquiry form on every trip with your phone, email and WhatsApp in one place",
+          "Every lead lands in your dashboard as a clean, trackable inquiry",
+          "No payment friction, no abandoned checkout — your guests contact you directly",
         ]}
-        cta="Explore bookings"
-        ctaHref="/bookings"
+        cta="How inquiries work"
+        ctaHref="/contact"
         visual={
           <Image
             src="/images/dashboard-desk.jpg"
