@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { PageHero } from "@/components/site/PageHero";
 import { Faq } from "@/components/site/Faq";
 import { Pricing } from "@/components/site/Pricing";
 import { Cta } from "@/components/site/Cta";
 import { pageMetadata } from "@/lib/seo";
-import { SIGNUP_URL } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Pricing — Start free, upgrade when you're ready",
@@ -45,19 +42,6 @@ const faqs = [
 export default function PricingPage() {
   return (
     <main>
-      <PageHero
-        eyebrow="Pricing"
-        title="Start free. Scale when you're ready."
-        subtitle="The Free plan launches your catalog and website. When you're ready for custom branding, AI itineraries and more, upgrade or talk to us."
-      >
-        <Button variant="hero" size="xl" asChild>
-          <a href={SIGNUP_URL}>Start for free</a>
-        </Button>
-        <Button variant="outlineDark" size="xl" asChild>
-          <a href="/contact">Contact sales</a>
-        </Button>
-      </PageHero>
-
       <Pricing />
 
       <section className="bg-background px-6 py-20 lg:py-28">
