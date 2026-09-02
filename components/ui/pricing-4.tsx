@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
-import { CheckCircle, Star } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -47,7 +47,7 @@ const PLANS: Plan[] = [
     annual: { price: "$23", priceSuffix: "month" },
     badge: "Most Popular",
     highlighted: true,
-    cta: { label: "Start for free", href: SIGNUP_URL },
+    cta: { label: "Upgrade to Launch", href: SIGNUP_URL },
     features: [
       "Everything in Free",
       "Unlimited trips & posts",
@@ -60,12 +60,12 @@ const PLANS: Plan[] = [
     ],
   },
   {
-    name: "Business",
+    name: "Scale",
     description: "For operators running several brands or teams.",
     price: "$79",
     priceSuffix: "month",
     annual: { price: "$63", priceSuffix: "month" },
-    cta: { label: "Start for free", href: SIGNUP_URL },
+    cta: { label: "Upgrade to Scale", href: SIGNUP_URL },
     features: [
       "Everything in Launch",
       "Read-only API access",
@@ -81,7 +81,7 @@ const PLANS: Plan[] = [
     price: "Custom",
     cta: { label: "Contact us", href: "/contact" },
     features: [
-      "Everything in Business",
+      "Everything in Scale",
       "White-label (remove TripEleven)",
       "Unlimited storage",
       "Dedicated onboarding",
@@ -180,7 +180,7 @@ export function PricingSection() {
                 <ul className="mt-6 space-y-2.5">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 shrink-0 text-primary" />
+                      <Check className="h-4 w-4 shrink-0 text-muted-foreground" />
                       <span className="text-sm text-muted-foreground">{feature}</span>
                     </li>
                   ))}
