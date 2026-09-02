@@ -1,13 +1,15 @@
 import Image from "next/image";
+import { Wand2, MessageCircle, Globe, ImageIcon, Search, LayoutTemplate } from "lucide-react";
 import { Hero } from "@/components/site/Hero";
 import { Benefits } from "@/components/site/Benefits";
 import { FeatureSplit } from "@/components/site/FeatureSplit";
-
 import { AiSection } from "@/components/site/AiSection";
+import { Faq } from "@/components/site/Faq";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Clients } from "@/components/site/Clients";
 import { Pricing } from "@/components/site/Pricing";
 import { Cta } from "@/components/site/Cta";
+import { SIGNUP_URL } from "@/lib/site";
 
 function Wave() {
   return (
@@ -22,6 +24,121 @@ function Wave() {
   );
 }
 
+const features = [
+  {
+    icon: LayoutTemplate,
+    title: "Trip builder",
+    body: "A structured builder with tabbed itinerary variants, drag-and-drop days, altitude charts, FAQ groups and pricing tiers.",
+  },
+  {
+    icon: Wand2,
+    title: "AI trip generation",
+    body: "Batch-generate full day-by-day itineraries with Claude, then polish them in the same builder your team already uses.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Trip inquiries",
+    body: "Every trip gets an inquiry form and your WhatsApp link — leads land in one clean dashboard so you can respond fast.",
+  },
+  {
+    icon: Globe,
+    title: "Public website",
+    body: "A launch-ready, fully brandable website powered by your catalog — curated from the dashboard with drag-and-drop menus.",
+  },
+  {
+    icon: Search,
+    title: "SEO toolkit",
+    body: "Per-trip meta and schema markup, Open Graph, auto-slugs with 301 redirects, and a redirect manager with cycle detection.",
+  },
+  {
+    icon: ImageIcon,
+    title: "Media library",
+    body: "Automatic WebP conversion, built-in cropping presets, and alt text baked into every file for accessibility and SEO.",
+  },
+];
+
+const audiences = [
+  {
+    title: "Tour & trekking operators",
+    body: "Altitude charts, itinerary variants, departures with capacity, and printable trip facts make TripEleven the natural home for Himalaya and trekking operators.",
+  },
+  {
+    title: "Destination management companies",
+    body: "Each client keeps its own catalog, content and inquiries, cleanly separated. Manage every brand from one dashboard.",
+  },
+  {
+    title: "Adventure & specialty travel",
+    body: "Safaris, rafting, hiking and mountaineering all get the same structured builder — trip facts, difficulty, seasons and per-departure pricing.",
+  },
+  {
+    title: "Boutique travel agencies",
+    body: "Launch a complete website with your own branding — no developers, no code. Curate and publish from the dashboard.",
+  },
+];
+
+const faqs = [
+  {
+    q: "What is TripEleven?",
+    a: "TripEleven is an all-in-one platform for tour and trekking agencies to build, manage and sell trips online — a structured trip builder, AI itinerary generation, a full public website, inquiries and SEO in one workspace.",
+  },
+  {
+    q: "Do I need developers or coding skills?",
+    a: "No. Everything runs from a dashboard — build your catalog, publish your website, and collect inquiries without writing a line of code.",
+  },
+  {
+    q: "How is the trip builder different from a form?",
+    a: "It\u2019s a guided flow: Basic Info, Trip Facts, Itinerary, Inclusions/Exclusions, Meetings, Media, Pricing, Additional Info, FAQs, SEO and Featured. Every step is purpose-built, not a dump of fields.",
+  },
+  {
+    q: "Can I have multiple versions of one trip?",
+    a: "Yes. Tabbed itinerary variants let you offer a Standard and a Premium experience of the same trip, each with its own days, inclusions and pricing.",
+  },
+  {
+    q: "How does AI trip generation work?",
+    a: "Drop in up to 10 trip topics and a style. Claude drafts full day-by-day itineraries in one batch, then every draft opens in the trip builder for your team to review, edit and publish.",
+  },
+  {
+    q: "Is the AI output ready to publish?",
+    a: "It's a strong first draft, not a finished product. Every generated itinerary lands in the same trip builder so your team reviews, edits and polishes before publishing.",
+  },
+  {
+    q: "How do trip inquiries get to me?",
+    a: "Every trip gets an inquiry form with your phone, email and WhatsApp in one place. Leads land in your dashboard as clean, trackable inquiries you respond to on your terms.",
+  },
+  {
+    q: "Can I use my own domain?",
+    a: "Yes. On Launch and higher you connect a custom domain, and your published site lives on it with full SEO — canonicals, sitemap and schema markup included.",
+  },
+  {
+    q: "What does my published website include?",
+    a: "A launch-ready, brandable website powered by your catalog — featured trips, menus, testimonials, team and reviews — curated from the dashboard with drag-and-drop tools.",
+  },
+  {
+    q: "Is the SEO toolkit built in?",
+    a: "Yes. Every trip ships with per-trip meta, canonical and Open Graph, JSON-LD schema, auto-slugs with permanent 301 redirects, and a redirect manager with cycle detection.",
+  },
+  {
+    q: "What happens when a trip slug changes?",
+    a: "A permanent 301 redirect is created automatically, so old links and search rankings never break.",
+  },
+  {
+    q: "Can multiple team members work together?",
+    a: "Yes. Every agency gets staff roles — Owner, Admin, Manager and Editor — with controlled access, plus a DRAFT \u2192 PUBLISHED pipeline and verification before publishing.",
+  },
+  {
+    q: "Do you support multiple brands or agencies?",
+    a: "If you run a destination management company, each client keeps its own catalog, content and inquiries, cleanly separated — all managed from one dashboard.",
+  },
+  {
+    q: "Can I process payments with my own Stripe keys?",
+    a: "Yes, on Enterprise you can receive payments through your own Stripe keys, and manage bookings and payments directly in the platform.",
+  },
+  {
+    q: "Is there a free plan?",
+    a: "Yes. Start free with a branded website, up to 5 trips and trip inquiries — no credit card required. Upgrade when you grow.",
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -32,7 +149,6 @@ export default function Home() {
 
       <FeatureSplit
         id="builder"
-        eyebrow="Trip management"
         title="Built for real operators, not generic listings."
         body="A structured trip builder with tabbed itinerary variants, drag-and-drop days, altitude charts, FAQ groups and pricing tiers — everything a trekking or adventure operator actually needs."
         points={[
@@ -40,15 +156,29 @@ export default function Home() {
           "Live altitude profiles built from your own location and elevation points",
           "Departures and slots with capacity, available spots and per-date pricing",
         ]}
-        cta="See the builder"
-        ctaHref="/trip-builder"
+        cta="See pricing"
+        ctaHref="/pricing"
         visual={
-          <div className="relative ml-24 scale-160 rounded-md">
-            <Image src={"/product-images/trip-editor-2.png"} width={1900} height={800} alt="trip builder" className="block w-full rounded-md" />
-            <div className="pointer-events-none absolute inset-0 rounded-md bg-[radial-gradient(ellipse_at_center,transparent_55%,white_98%)]" />
+          <div className="relative ml-24 scale-160">
+            <Image src={"/product-images/trip-editor-2.png"} width={1900} height={800} alt="trip builder" className="block w-full" />
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,white_98%)]" />
           </div>
         }
       />
+
+      <section className="border-t border-border bg-background px-6 py-20 lg:py-28">
+        <div className="container">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {features.map((f) => (
+              <div key={f.title} className="group border border-border bg-card p-8 transition-shadow hover:shadow-lg">
+                <f.icon className="size-9 text-teal-blue" strokeWidth={2.2} />
+                <h3 className="mt-6 text-xl font-bold text-twilight">{f.title}</h3>
+                <p className="mt-3 text-twilight/75">{f.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <AiSection />
 
@@ -56,7 +186,6 @@ export default function Home() {
         id="inquiries"
         tone="tint"
         reverse
-        eyebrow="Trip inquiries"
         title="Leads come to you. You close the way your guests already talk."
         body="Travelers send trip inquiries right from your site — through a simple form, email or straight to WhatsApp. You watch every lead land in one dashboard and respond on your terms."
         points={[
@@ -73,14 +202,13 @@ export default function Home() {
             width={1200}
             height={900}
             loading="lazy"
-            className="rounded-3xl shadow-[0_30px_80px_-40px_oklch(0.23_0.176_269/0.5)]"
+            className="shadow-[0_30px_80px_-40px_oklch(0.23_0.176_269/0.5)]"
           />
         }
       />
 
       <FeatureSplit
         id="content"
-        eyebrow="Content & media"
         title="Forget spreadsheets. Focus on guests."
         body="A block-based editor with slash commands, live trip embeds and reading time — plus a production-grade media library that does the image work for you."
         points={[
@@ -88,8 +216,8 @@ export default function Home() {
           "Automatic WebP conversion, compression and built-in cropping presets",
           "Alt text and captions baked into the file for accessibility and SEO",
         ]}
-        cta="Explore the editor"
-        ctaHref="/features"
+        cta="Start building free"
+        ctaHref={SIGNUP_URL}
         visual={
           <div className="flex justify-center gap-4">
             <Image
@@ -98,7 +226,7 @@ export default function Home() {
               width={900}
               height={1100}
               loading="lazy"
-              className="w-1/2 max-w-[290px] rounded-lg border border-border object-cover"
+              className="w-1/2 max-w-[290px] border border-border object-cover"
             />
             <Image
               src="/images/hero-group.jpg"
@@ -106,7 +234,7 @@ export default function Home() {
               width={900}
               height={1200}
               loading="lazy"
-              className="mt-12 w-1/2 max-w-[290px] rounded-lg border border-border object-cover"
+              className="mt-12 w-1/2 max-w-[290px] border border-border object-cover"
             />
           </div>
         }
@@ -116,7 +244,6 @@ export default function Home() {
         id="template"
         tone="tint"
         reverse
-        eyebrow="Public website"
         title="A complete agency website without developers."
         body="Our public API powers a launch-ready, fully brandable theme. Curate it from the dashboard — featured trips, menus, testimonials, team and reviews — and it shapes your live site."
         points={[
@@ -124,90 +251,52 @@ export default function Home() {
           "Per-trip SEO: meta, canonical, Open Graph 1200×630 and JSON-LD schema",
           "Auto slugs with permanent 301 redirects and a redirect manager with cycle detection",
         ]}
-        cta="See the SEO toolkit"
-        ctaHref="/seo"
+        cta="See pricing"
+        ctaHref="/pricing"
         visual={
-          <div className="relative rounded-3xl bg-cyan-lite p-8 sm:p-12">
-            <svg viewBox="0 0 480 360" className="w-full" role="img" aria-label="Drag-and-drop website builder preview">
-              {/* Browser chrome */}
-              <rect x="20" y="10" width="440" height="340" rx="12" fill="white" stroke="var(--twilight)" strokeOpacity="0.12" />
-              <rect x="20" y="10" width="440" height="36" rx="12" fill="var(--cyan-lite)" />
-              <rect x="20" y="34" width="440" height="12" fill="var(--cyan-lite)" />
-              <circle cx="42" cy="28" r="5" fill="#f87171" />
-              <circle cx="58" cy="28" r="5" fill="#fbbf24" />
-              <circle cx="74" cy="28" r="5" fill="#34d399" />
-              <rect x="100" y="21" width="180" height="14" rx="7" fill="white" fillOpacity="0.7" />
-              <text x="190" y="32" textAnchor="middle" fontSize="9" fill="var(--twilight)" fillOpacity="0.4" fontFamily="system-ui">walkthroughnepal.com</text>
-
-              {/* Navbar */}
-              <rect x="36" y="56" width="408" height="32" rx="6" fill="var(--twilight)" />
-              <rect x="48" y="66" width="60" height="10" rx="2" fill="white" fillOpacity="0.9" />
-              <text x="78" y="74" textAnchor="middle" fontSize="8" fontWeight="600" fill="white" fontFamily="system-ui">Logo</text>
-              <rect x="180" y="69" width="32" height="5" rx="2" fill="white" fillOpacity="0.5" />
-              <rect x="222" y="69" width="32" height="5" rx="2" fill="white" fillOpacity="0.5" />
-              <rect x="264" y="69" width="32" height="5" rx="2" fill="white" fillOpacity="0.5" />
-              <rect x="306" y="69" width="32" height="5" rx="2" fill="white" fillOpacity="0.5" />
-              <rect x="390" y="62" width="44" height="20" rx="5" fill="var(--teal-blue)" />
-              <text x="412" y="75" textAnchor="middle" fontSize="7" fontWeight="600" fill="white" fontFamily="system-ui">Book</text>
-
-              {/* Hero area */}
-              <rect x="36" y="100" width="200" height="14" rx="3" fill="var(--twilight)" fillOpacity="0.8" />
-              <rect x="36" y="122" width="160" height="8" rx="2" fill="var(--twilight)" fillOpacity="0.25" />
-              <rect x="36" y="136" width="140" height="8" rx="2" fill="var(--twilight)" fillOpacity="0.15" />
-              <rect x="36" y="156" width="60" height="22" rx="5" fill="var(--teal-blue)" />
-              <text x="66" y="170" textAnchor="middle" fontSize="7" fontWeight="600" fill="white" fontFamily="system-ui">Explore</text>
-
-              {/* Hero image placeholder */}
-              <rect x="260" y="100" width="184" height="130" rx="8" fill="var(--surf)" fillOpacity="0.3" />
-              <path d="M310 200 L340 150 L370 180 L400 130 L430 170 L430 230 L260 230 Z" fill="var(--surf)" fillOpacity="0.5" />
-              <path d="M280 230 L320 170 L360 200 L400 155 L440 190 L444 230 Z" fill="var(--teal-blue)" fillOpacity="0.2" />
-
-              {/* Trip cards */}
-              <rect x="36" y="200" width="88" height="60" rx="6" fill="white" stroke="var(--twilight)" strokeOpacity="0.08" />
-              <rect x="36" y="200" width="88" height="30" rx="6" fill="var(--surf)" fillOpacity="0.3" />
-              <path d="M36 220 L60 208 L80 216 L100 204 L124 220 L124 230 L36 230 Z" fill="var(--surf)" fillOpacity="0.5" />
-              <rect x="44" y="238" width="50" height="5" rx="2" fill="var(--twilight)" fillOpacity="0.3" />
-              <rect x="44" y="248" width="36" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.15" />
-
-              <rect x="134" y="200" width="88" height="60" rx="6" fill="white" stroke="var(--twilight)" strokeOpacity="0.08" />
-              <rect x="134" y="200" width="88" height="30" rx="6" fill="var(--teal-blue)" fillOpacity="0.15" />
-              <path d="M140 225 L160 210 L180 220 L200 208 L222 225 L222 230 L134 230 Z" fill="var(--teal-blue)" fillOpacity="0.25" />
-              <rect x="142" y="238" width="50" height="5" rx="2" fill="var(--twilight)" fillOpacity="0.3" />
-              <rect x="142" y="248" width="36" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.15" />
-
-              <rect x="232" y="200" width="88" height="60" rx="6" fill="white" stroke="var(--twilight)" strokeOpacity="0.08" />
-              <rect x="232" y="200" width="88" height="30" rx="6" fill="var(--surf)" fillOpacity="0.25" />
-              <path d="M238 225 L258 210 L278 220 L298 208 L320 225 L320 230 L232 230 Z" fill="var(--surf)" fillOpacity="0.4" />
-              <rect x="240" y="238" width="50" height="5" rx="2" fill="var(--twilight)" fillOpacity="0.3" />
-              <rect x="240" y="248" width="36" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.15" />
-
-              {/* Footer */}
-              <rect x="36" y="274" width="408" height="60" rx="6" fill="var(--twilight)" fillOpacity="0.06" />
-              <rect x="48" y="284" width="50" height="8" rx="2" fill="var(--twilight)" fillOpacity="0.25" />
-              <rect x="48" y="298" width="80" height="5" rx="2" fill="var(--twilight)" fillOpacity="0.12" />
-              <rect x="48" y="308" width="70" height="5" rx="2" fill="var(--twilight)" fillOpacity="0.12" />
-              <rect x="160" y="284" width="40" height="5" rx="2" fill="var(--twilight)" fillOpacity="0.18" />
-              <rect x="160" y="294" width="55" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.10" />
-              <rect x="160" y="303" width="45" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.10" />
-              <rect x="160" y="312" width="50" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.10" />
-              <rect x="240" y="284" width="40" height="5" rx="2" fill="var(--twilight)" fillOpacity="0.18" />
-              <rect x="240" y="294" width="50" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.10" />
-              <rect x="240" y="303" width="40" height="4" rx="2" fill="var(--twilight)" fillOpacity="0.10" />
-              <rect x="370" y="284" width="60" height="20" rx="4" fill="var(--teal-blue)" fillOpacity="0.15" />
-              <text x="400" y="297" textAnchor="middle" fontSize="6" fill="var(--teal-blue)" fontFamily="system-ui">Newsletter</text>
-
-              {/* Drag handle indicator */}
-              <rect x="450" y="106" width="8" height="28" rx="4" fill="var(--teal-blue)" fillOpacity="0.6" />
-              <circle cx="454" cy="114" r="1.5" fill="white" fillOpacity="0.8" />
-              <circle cx="454" cy="120" r="1.5" fill="white" fillOpacity="0.8" />
-              <circle cx="454" cy="126" r="1.5" fill="white" fillOpacity="0.8" />
-            </svg>
+          <div className="relative bg-cyan-lite p-8 sm:p-12">
+            <Image
+              src="/product-images/custom-site.png"
+              width={2870}
+              height={1826}
+              alt="Published trip website"
+              className="block w-full border border-border bg-card p-3 shadow-[0_30px_60px_-30px_oklch(0.23_0.176_269/0.4)]"
+            />
           </div>
         }
       />
 
+      <section className="border-t border-border bg-background px-6 py-20 lg:py-28">
+        <div className="container">
+          <h2 className="max-w-xl text-4xl leading-tight tracking-tight text-twilight sm:text-5xl">
+            Built for real operators.
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg text-twilight/75">
+            TripEleven is an all-in-one platform for tour & travel agencies that build, manage and promote trips online.
+          </p>
+          <div className="mt-14 grid gap-6 md:grid-cols-2">
+            {audiences.map((a) => (
+              <div key={a.title} className="border border-border bg-card p-9">
+                <h3 className="mt-2 text-2xl font-bold text-twilight">{a.title}</h3>
+                <p className="mt-3 text-twilight/75">{a.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Testimonials />
       <Pricing />
+
+      <section className="border-t border-border bg-background px-6 py-20 lg:py-28">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-center text-3xl text-twilight sm:text-4xl">Frequently asked questions</h2>
+          <div className="mt-12">
+            <Faq items={faqs} />
+          </div>
+        </div>
+      </section>
+
       <Cta />
     </main>
   );

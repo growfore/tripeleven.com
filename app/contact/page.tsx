@@ -32,7 +32,6 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Contact"
         title="Let's get your agency live."
         subtitle="Questions about the platform, a demo, or Enterprise pricing? Send us a message and we'll take it from there."
       />

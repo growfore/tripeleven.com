@@ -23,13 +23,12 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero
-        eyebrow="About"
         title="Agencies deserve better than spreadsheets."
         subtitle="TripEleven started with a simple observation: tour and trekking operators run their entire business on the wrong tools. We built the platform they'd design for themselves."
       />
 
       <section className="bg-background px-6 py-20 lg:py-28">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-2">
+        <div className="container grid items-center gap-14 lg:grid-cols-2">
           <div>
             <h2 className="max-w-xl text-4xl text-twilight sm:text-5xl">
               All-in-one, multi-tenant, and opinionated about your work.
@@ -55,7 +54,7 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-2 gap-6">
             {stats.map((s) => (
-              <div key={s.label} className="rounded-2xl border border-border bg-card p-8 text-center">
+              <div key={s.label} className="border border-border bg-card p-8 text-center">
                 <p className="text-4xl font-bold text-twilight">{s.value}</p>
                 <p className="mt-2 text-sm text-twilight/70">{s.label}</p>
               </div>

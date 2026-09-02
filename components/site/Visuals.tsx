@@ -18,7 +18,7 @@ const steps = [
 
 export function BuilderVisual() {
   return (
-    <div className="rounded-xl border border-border bg-card p-6">
+    <div className="border border-border bg-card p-6">
       <div className="flex flex-wrap gap-2">
         {steps.map((s, i) => (
           <motion.span
@@ -37,7 +37,7 @@ export function BuilderVisual() {
           </motion.span>
         ))}
       </div>
-      <div className="mt-6 rounded-2xl bg-cyan-lite/60 p-5">
+      <div className="mt-6 bg-cyan-lite/60 p-5">
         <p className="text-xs font-bold tracking-widest text-teal-blue uppercase">
           Altitude profile
         </p>
@@ -71,7 +71,7 @@ export function BuilderVisual() {
           ["Difficulty", "Moderate"],
           ["Group size", "2\u201312"],
         ].map(([k, v]) => (
-          <div key={k} className="rounded-xl border border-border p-3">
+          <div key={k} className="border border-border p-3">
             <p className="text-[11px] tracking-wide text-muted-foreground uppercase">{k}</p>
             <p className="mt-1 font-bold text-twilight">{v}</p>
           </div>
@@ -82,43 +82,18 @@ export function BuilderVisual() {
 }
 
 export function ChannelVisual() {
-  const chips = [
-    "Trip inquiries",
-    "Google Things to do",
-    "Tripadvisor",
-    "Viator",
-    "Your website",
-    "Newsletter",
-    "Print itineraries",
-    "Reviews",
-    "Wishlists",
-  ];
   return (
-    <div className="relative rounded-3xl bg-cyan-lite p-10">
+    <div className="relative flex items-center justify-center bg-cyan-lite p-10">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.45 }}
-        className="mx-auto flex max-w-xs flex-col items-center rounded-2xl bg-twilight p-6 text-center text-primary-foreground"
+        className="mx-auto flex max-w-xs flex-col items-center bg-twilight p-6 text-center text-primary-foreground"
       >
         <p className="text-sm tracking-widest text-surf uppercase">One workspace</p>
         <p className="mt-2 text-2xl font-bold">Your agency</p>
       </motion.div>
-      <div className="mt-8 flex flex-wrap justify-center gap-3">
-        {chips.map((c, i) => (
-          <motion.span
-            key={c}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.35, delay: 0.1 + i * 0.05 }}
-            className="rounded-full bg-card px-4 py-2 text-sm font-medium text-twilight shadow-sm"
-          >
-            {c}
-          </motion.span>
-        ))}
-      </div>
     </div>
   );
 }

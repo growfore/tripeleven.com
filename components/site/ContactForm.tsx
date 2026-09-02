@@ -36,10 +36,10 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-border bg-card px-4 py-3 text-twilight placeholder:text-twilight/40 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20";
+    "w-full border border-border bg-card px-4 py-3 text-twilight placeholder:text-twilight/40 outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20";
 
   return (
-    <form onSubmit={onSubmit} className="rounded-3xl border border-border bg-card p-8 sm:p-10">
+    <form onSubmit={onSubmit} className="border border-border bg-card p-8 sm:p-10">
       <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" />
 
       <div className="grid gap-5 sm:grid-cols-2">

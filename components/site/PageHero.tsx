@@ -5,13 +5,11 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 export function PageHero({
-  eyebrow,
   title,
   subtitle,
   children,
   className,
 }: {
-  eyebrow: string;
   title: string;
   subtitle?: string;
   children?: ReactNode;
@@ -20,19 +18,11 @@ export function PageHero({
   return (
     <section className={cn("border-b border-border bg-background px-6 py-20 lg:py-28", className)}>
       <div className="mx-auto max-w-4xl text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="text-sm font-bold tracking-widest text-teal-blue uppercase"
-        >
-          {eyebrow}
-        </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.08 }}
-          className="mt-4 text-4xl text-twilight sm:text-6xl"
+          className="mt-4 text-5xl text-twilight sm:text-7xl"
         >
           {title}
         </motion.h1>

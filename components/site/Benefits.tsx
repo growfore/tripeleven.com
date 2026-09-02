@@ -24,7 +24,7 @@ const items = [
 export function Benefits() {
   return (
     <section id="platform" className="bg-background px-6 py-20">
-      <div className="mx-auto max-w-7xl">
+      <div className="container">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +36,7 @@ export function Benefits() {
           <br />
           Bye-bye spreadsheet chaos.
         </motion.h2>
-        <div className="mt-14 grid gap-px overflow-hidden rounded-xl bg-border md:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden bg-border md:grid-cols-3">
           {items.map((item, i) => (
             <motion.div
               key={item.title}

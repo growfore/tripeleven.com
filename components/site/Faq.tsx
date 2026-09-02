@@ -4,7 +4,7 @@ export function Faq({ items }: { items: { q: string; a: string }[] }) {
       {items.map((item) => (
         <details
           key={item.q}
-          className="group rounded-2xl border border-border bg-card p-6"
+          className="group border border-border bg-card p-6"
         >
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-twilight">
             {item.q}

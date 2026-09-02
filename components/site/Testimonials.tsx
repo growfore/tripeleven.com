@@ -45,7 +45,7 @@ export function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-4xl text-twilight sm:text-5xl"
         >
-          From the people who&apos;ve been there\u2026
+          From the people who&apos;ve been there.
         </motion.h2>
         <Quote className="mx-auto mt-12 size-10 text-surf" />
         <div

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans } from "next/font/google";
+import { Barlow_Semi_Condensed, Livvic } from "next/font/google";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Cta";
 import { ClarityAnalytics } from "@/components/site/Clarity";
@@ -13,7 +13,13 @@ import {
 import "./globals.css";
 
 
-const plex = IBM_Plex_Sans({
+const barlow = Barlow_Semi_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-display",
+})
+
+const livvic = Livvic({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
@@ -96,7 +102,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${plex.variable}`}>
+      <body className={`${barlow.variable} ${livvic.variable}`}>
         <ClarityAnalytics />
         <Nav />
         <div className="pt-28">

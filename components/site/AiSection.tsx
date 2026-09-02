@@ -3,6 +3,7 @@
 import { Sparkles, ListChecks, PenLine, Rocket } from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { SIGNUP_URL } from "@/lib/site";
 
 const steps = [
   { icon: Sparkles, title: "Prompt", body: "Drop in up to 10 trip topics and a style: \u201Cluxury, 12\u201314 days, family-friendly\u201D." },
@@ -14,7 +15,7 @@ const steps = [
 export function AiSection() {
   return (
     <section id="ai" className="bg-twilight px-6 py-24 text-primary-foreground">
-      <div className="mx-auto max-w-7xl">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +23,6 @@ export function AiSection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl"
         >
-          <p className="mb-4 text-sm font-bold tracking-widest text-surf uppercase">AI generation</p>
           <h2 className="text-4xl sm:text-5xl">From topic to ready-to-sell trip in minutes.</h2>
           <p className="mt-6 text-lg text-primary-foreground/75">
             Batch-generate complete itineraries with AI, then refine them in the same trip
@@ -37,7 +37,7 @@ export function AiSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.45, delay: 0.1 + idx * 0.1 }}
-              className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-7"
+              className="border border-primary-foreground/15 bg-primary-foreground/5 p-7"
             >
               <s.icon className="size-7 text-surf" />
               <p className="mt-6 text-xs font-bold tracking-widest text-surf">
@@ -49,7 +49,7 @@ export function AiSection() {
           ))}
         </div>
         <Button variant="onDark" size="xl" className="mt-14" asChild>
-          <a href="/ai">Try AI trip generation</a>
+          <a href={SIGNUP_URL}>Try AI trip generation</a>
         </Button>
       </div>
     </section>

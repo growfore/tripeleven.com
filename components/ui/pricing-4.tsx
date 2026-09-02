@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { useState } from "react";
-import { Check, Star } from "lucide-react";
+import { Check, X, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
@@ -163,9 +163,8 @@ export function PricingSection() {
 
   return (
     <section id="pricing" className="w-full py-20 lg:py-40">
-      <div className="container mx-auto">
+      <div className="container">
         <div className="flex flex-col items-center justify-center gap-4 text-center">
-          <Badge>Pricing</Badge>
           <div className="flex flex-col gap-2">
             <h2 className="max-w-xl text-center text-3xl font-regular tracking-tighter md:text-5xl">
               Start free. Scale when you&apos;re ready.
@@ -203,7 +202,7 @@ export function PricingSection() {
           </div>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="container mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {PLANS.map((plan) => {
             const shown = annual && plan.annual ? plan.annual : plan;
             return (
@@ -214,7 +213,7 @@ export function PricingSection() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5 }}
                 className={cn(
-                  "relative flex flex-col rounded-2xl border bg-card p-6",
+                  "relative flex flex-col border bg-card p-6",
                   plan.highlighted && "border-primary shadow-[0_0_40px_-10px_rgba(29,78,216,0.3)]",
                 )}
               >
@@ -275,7 +274,7 @@ export function PricingSection() {
             </p>
           </div>
 
-          <div className="mt-8 overflow-x-auto rounded-2xl border">
+          <div className="mt-8 overflow-x-auto border">
             <table className="w-full min-w-[640px] border-collapse text-sm">
               <thead>
                 <tr className="border-b bg-muted/50">
@@ -319,18 +318,28 @@ function RowGroup({ group }: { group: CompareGroup }) {
       {group.rows.map((row) => (
         <tr key={row.label} className="border-t">
           <td className="px-4 py-2.5 font-medium">{row.label}</td>
-          {COMPARE_PLANS.map((plan) => (
-            <td
-              key={plan}
-              className={`px-4 py-2.5 ${
-                row[plan.toLowerCase() as "free" | "launch" | "scale" | "enterprise"] === "—"
-                  ? "text-muted-foreground/50"
-                  : "text-foreground"
-              }`}
-            >
-              {row[plan.toLowerCase() as "free" | "launch" | "scale" | "enterprise"]}
-            </td>
-          ))}
+          {COMPARE_PLANS.map((plan) => {
+            const value = row[plan.toLowerCase() as "free" | "launch" | "scale" | "enterprise"];
+            if (value === "Included") {
+              return (
+                <td key={plan} className="px-4 py-2.5">
+                  <Check className="h-4 w-4 text-primary" />
+                </td>
+              );
+            }
+            if (value === "—") {
+              return (
+                <td key={plan} className="px-4 py-2.5">
+                  <X className="h-4 w-4 text-muted-foreground/50" />
+                </td>
+              );
+            }
+            return (
+              <td key={plan} className="px-4 py-2.5 text-foreground">
+                {value}
+              </td>
+            );
+          })}
         </tr>
       ))}
     </>

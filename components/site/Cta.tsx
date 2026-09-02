@@ -13,10 +13,10 @@ export function Cta() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.55 }}
-        className="relative mx-auto max-w-7xl overflow-hidden rounded-4xl bg-twilight px-8 py-20 text-center text-primary-foreground sm:px-14"
+        className="relative container overflow-hidden bg-twilight px-8 py-20 text-center text-primary-foreground sm:px-14"
       >
         <div
-          className="pointer-events-none absolute inset-0 rounded-4xl"
+          className="pointer-events-none absolute inset-0"
           style={{
             background: "radial-gradient(ellipse at 50% 0%, rgba(29,78,216,0.2), transparent 70%)",
           }}
@@ -33,7 +33,7 @@ export function Cta() {
           </Button>
           <Button
             size="xl"
-            className="rounded-lg border-2 border-primary-foreground/40 bg-transparent font-semibold text-primary-foreground hover:bg-primary-foreground/10"
+            className="border-2 border-primary-foreground/40 bg-transparent font-semibold text-primary-foreground hover:bg-primary-foreground/10"
             asChild
           >
             <Link href="/contact">Talk to sales</Link>
@@ -51,35 +51,17 @@ const cols = [
   {
     title: "Platform",
     links: [
-      { label: "Features", href: "/features" },
-      { label: "Trip builder", href: "/trip-builder" },
-      { label: "AI generation", href: "/ai" },
-      { label: "Trip inquiries", href: "/contact" },
-      { label: "SEO toolkit", href: "/seo" },
+      { label: "Features", href: "/#builder" },
+      { label: "AI generation", href: "/#ai" },
       { label: "Pricing", href: "/pricing" },
-    ],
-  },
-  {
-    title: "Built for",
-    links: [
-      { label: "Tour operators", href: "/use-cases" },
-      { label: "Trekking companies", href: "/use-cases" },
-      { label: "DMCs", href: "/use-cases" },
-      { label: "Adventure travel", href: "/use-cases" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About", href: "/about" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
+      { label: "Trip inquiries", href: "/contact" },
     ],
   },
 ];
@@ -87,7 +69,7 @@ const cols = [
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background px-6 py-16">
-      <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-5">
+      <div className="container grid gap-10 md:grid-cols-3">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 text-2xl font-bold text-twilight">
             <span className="font-display">TripEleven</span>
@@ -111,7 +93,7 @@ export function Footer() {
           </div>
         ))}
       </div>
-      <div className="mx-auto mt-14 max-w-7xl border-t border-border pt-6 text-sm text-twilight/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <div className="container mt-14 border-t border-border pt-6 text-sm text-twilight/60 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <span>&copy; {new Date().getFullYear()} TripEleven. All rights reserved.</span>
         <span className="inline-flex items-center gap-1.5">
           <a href="https://growfore.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">

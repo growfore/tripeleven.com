@@ -66,7 +66,7 @@ export function Clients() {
             href={c.href}
             target="_blank"
             rel="noreferrer"
-            className="relative group mx-4 block h-[90vh] w-50 md:w-[30vw] max-w-7xl shrink-0 overflow-hidden rounded-md border bg-card transition-colors hover:border-primary"
+            className="relative group mx-4 block h-[90vh] w-50 md:w-[30vw] max-w-[1440px] shrink-0 overflow-hidden rounded-md border bg-card transition-colors hover:border-primary"
           >
             <div className="absolute top-90 left-40 hidden group-hover:block p-2  text-white rounded-sm hover:opacity-90 bg-primary">Visit Website</div>
             {/* eslint-disable-next-line @next/next/no-img-element */}

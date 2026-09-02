@@ -1,134 +1,94 @@
 "use client";
 
-import { Check } from "lucide-react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import { SIGNUP_URL } from "@/lib/site";
 
-const proofs = [
-  {
-    bold: "Launch in days, not months:",
-    rest: "every agency gets an isolated workspace, ready to brand.",
-  },
-  {
-    bold: "Get inquiries, not forms:",
-    rest: "every trip gets an inquiry form and your WhatsApp link, all in one dashboard.",
-  },
-  {
-    bold: "SEO-first by default:",
-    rest: "schema markup, Open Graph and 301 redirects handled for you.",
-  },
-];
-
 export function Hero() {
   return (
     <section className="overflow-hidden border-b border-border">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-10 pb-16 lg:grid-cols-2 lg:pt-16">
+      <div className="container grid items-center gap-16 pt-16 pb-24 lg:grid-cols-2 lg:pt-24">
         <div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-5xl leading-[1.05] text-twilight sm:text-6xl lg:text-7xl"
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="text-6xl leading-[1.05] tracking-tight text-twilight sm:text-7xl lg:text-[5rem]"
           >
             More trips sold.
             <br />
-            Less admin.
+            <span className="text-teal-blue">Less admin.</span>
           </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-7 max-w-lg text-lg text-twilight/75"
+            transition={{ duration: 0.5, delay: 0.12 }}
+            className="mt-6 max-w-xl text-xl leading-relaxed text-twilight/75"
           >
-            TripEleven is the platform for tour operators, trekking companies and DMCs —
-            build your catalog, publish a full website, and collect trip inquiries without writing a
-            line of code.
+            Build your catalog, publish a full website, and collect trip
+            inquiries — no code, no developers. From trekking agencies to DMCs,
+            the platform for real operators.
           </motion.p>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
+            transition={{ duration: 0.5, delay: 0.18 }}
+            className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button variant="hero" size="xl" asChild>
               <a href={SIGNUP_URL}>Start for free</a>
             </Button>
             <Button variant="outlineDark" size="xl" asChild>
-              <a href="/trip-builder">See the trip builder</a>
+              <a href="/pricing">See pricing</a>
             </Button>
           </motion.div>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="mt-4 text-sm italic text-twilight/70"
-          >
-            No credit card required
-          </motion.p>
         </div>
-        <div className="relative flex justify-center gap-4 lg:justify-end">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-          >
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Image
-                src="/images/hero-trek.jpg"
-                alt="Trekker on a Himalayan ridge at sunrise"
-                width={900}
-                height={1200}
-                className="w-40 sm:w-56 lg:w-80 rounded-lg border border-border object-cover"
-              />
-            </motion.div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-14"
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-            >
-              <Image
-                src="/images/hero-group.jpg"
-                alt="Travelers with a local guide in a Kathmandu street"
-                width={900}
-                height={1200}
-                loading="lazy"
-                className="w-40 sm:w-56 lg:w-80 rounded-lg border border-border object-cover"
-              />
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
 
-      <div className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="grid overflow-hidden rounded-xl bg-border md:grid-cols-3">
-          {proofs.map((p, i) => (
-            <motion.div
-              key={p.bold}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
-              className="flex gap-3 bg-card p-6"
-            >
-              <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-twilight">
-                <Check className="size-4 text-primary-foreground" />
-              </span>
-              <p className="text-twilight/85">
-                <strong className="font-bold text-twilight">{p.bold}</strong> {p.rest}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="relative"
+        >
+          {/* layered gradient shaders behind the images */}
+          <div className="pointer-events-none absolute inset-0 -z-10 grid place-items-center">
+            <div className="absolute left-1/4 top-0 h-[70%] w-[45%] rounded-full bg-[radial-gradient(circle_at_center,rgba(2,132,199,0.45),transparent_70%)] blur-3xl" />
+            <div className="absolute bottom-0 right-0 h-[60%] w-[50%] rounded-full bg-[radial-gradient(circle_at_center,rgba(2,132,199,0.28),transparent_70%)] blur-3xl" />
+            <div className="absolute right-1/4 top-1/3 h-[40%] w-[30%] rounded-full bg-[conic-gradient(from_120deg,rgba(125,211,252,0.35),rgba(2,132,199,0.15),rgba(125,211,252,0.35))] blur-3xl" />
+          </div>
+
+          <motion.figure
+            animate={{ y: [0, -12, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative z-10 mx-auto w-full -rotate-2 border border-border bg-card p-3 shadow-[0_40px_90px_-30px_oklch(0.23_0.176_269/0.5)]"
+          >
+            <Image
+              src="/product-images/trip-editor.png"
+              width={2916}
+              height={1668}
+              alt="Trip builder in TripEleven"
+              priority
+              className="block w-full"
+            />
+          </motion.figure>
+
+          <motion.figure
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute -right-6 -bottom-6 z-20 w-[85%] rotate-2 border border-border bg-card p-3 shadow-[0_40px_90px_-30px_oklch(0.23_0.176_269/0.5)]"
+          >
+            <Image
+              src="/product-images/custom-site.png"
+              width={2870}
+              height={1826}
+              alt="Published trip website"
+              className="block w-full"
+            />
+          </motion.figure>
+        </motion.div>
       </div>
     </section>
   );
