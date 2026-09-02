@@ -53,7 +53,7 @@ const features = [
   {
     icon: ImageIcon,
     title: "Media library",
-    body: "Automatic WebP conversion, built-in cropping presets, and alt text baked into every file for accessibility and SEO.",
+    body: "Automatic WebP conversion and alt text baked into every file for accessibility and SEO.",
   },
 ];
 
@@ -213,7 +213,7 @@ export default function Home() {
         body="A block-based editor with slash commands, live trip embeds and reading time — plus a production-grade media library that does the image work for you."
         points={[
           "Type / to insert headings, tables, trip embeds and featured-trip widgets",
-          "Automatic WebP conversion, compression and built-in cropping presets",
+          "Automatic WebP conversion and compression, with alt text and captions baked in",
           "Alt text and captions baked into the file for accessibility and SEO",
         ]}
         cta="Start building free"

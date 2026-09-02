@@ -42,8 +42,8 @@ const COMPARE_GROUPS: CompareGroup[] = [
   {
     title: "Content & Catalog",
     rows: [
-      { label: "Trips", free: "5", launch: "45", scale: "100+", enterprise: "Unlimited" },
-      { label: "Blog posts", free: "3", launch: "200", scale: "Unlimited", enterprise: "Unlimited" },
+      { label: "Trips", free: "5", launch: "45", scale: "300", enterprise: "Unlimited" },
+      { label: "Blog posts", free: "3", launch: "200", scale: "2,500", enterprise: "Unlimited" },
       { label: "Large package catalogs", free: "—", launch: "—", scale: "Included", enterprise: "Included" },
       { label: "Per-trip SEO fields", free: "Included", launch: "Included", scale: "Included", enterprise: "Included" },
       { label: "Read-only API access", free: "—", launch: "—", scale: "Included", enterprise: "Included" },
@@ -134,7 +134,7 @@ const PLANS: Plan[] = [
     cta: { label: "Upgrade to Scale", href: SIGNUP_URL },
     features: [
       "Everything in Launch",
-      "100+ trips & unlimited blog posts",
+      "300 trips & 2,500 blog posts",
       "Read-only API access",
       "Large package catalogs",
       "Remove TripEleven branding",
