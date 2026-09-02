@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { CalendarRange, TrendingUp, Layers, Route } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PageHero } from "@/components/site/PageHero";
 import { Faq } from "@/components/site/Faq";
 import { Cta } from "@/components/site/Cta";
-import { BuilderVisual } from "@/components/site/Visuals";
 import { pageMetadata } from "@/lib/seo";
 import { SIGNUP_URL } from "@/lib/site";
 
@@ -98,7 +98,16 @@ export default function TripBuilderPage() {
               ))}
             </ul>
           </div>
-          <BuilderVisual />
+          <div className="relative rounded-md">
+            <Image
+              src={"/product-images/trip-editor-2.png"}
+              width={1900}
+              height={800}
+              alt="trip builder"
+              className="block w-full rounded-md"
+            />
+            <div className="pointer-events-none absolute inset-0 rounded-md bg-[radial-gradient(ellipse_at_center,transparent_55%,white_98%)]" />
+          </div>
         </div>
       </section>
 
