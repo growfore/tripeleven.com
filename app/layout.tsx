@@ -4,6 +4,7 @@ import { Barlow_Semi_Condensed, Livvic } from "next/font/google";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Cta";
 import { ClarityAnalytics } from "@/components/site/Clarity";
+import { GoogleAnalytics } from "@/components/site/GoogleAnalytics";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import {
   developer,
@@ -103,6 +104,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className={`${barlow.variable} ${livvic.variable}`}>
+        <GoogleAnalytics />
         <ClarityAnalytics />
         <Nav />
         <div className="pt-28">
